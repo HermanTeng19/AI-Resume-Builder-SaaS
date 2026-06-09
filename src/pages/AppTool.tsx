@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import OpenAI from 'openai';
-import { Upload, FileText, User, Briefcase, GraduationCap, Code, Sparkles, Eye, EyeOff, Key, Trash2, CheckCircle2, XCircle, Settings, Server, ChevronDown, Box, Zap, Cpu, Download } from 'lucide-react';
+import { Upload, FileText, User, Briefcase, GraduationCap, Code, Sparkles, Eye, EyeOff, Key, Trash2, CheckCircle2, XCircle, Settings, Server, ChevronDown, Download } from 'lucide-react';
 import { Document, Packer, Paragraph, TextRun, HeadingLevel } from 'docx';
 import { saveAs } from 'file-saver';
 import { generateParsePrompt, generateOptimizeBulletsPrompt, generateTailorSkillsPrompt, generateOptimizeSummaryPrompt } from '../lib/prompts';

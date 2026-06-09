@@ -5,6 +5,7 @@ import AppTool from './pages/AppTool';
 import BlogList from './pages/BlogList';
 import BlogPost from './pages/BlogPost';
 import TrustPage from './pages/TrustPage';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <Route path="privacy-policy" element={<TrustPage title="Privacy Policy" />} />
         <Route path="terms-of-service" element={<TrustPage title="Terms of Service" />} />
         <Route path="about" element={<TrustPage title="About Us" />} />
-        <Route path="contact" element={<TrustPage title="Contact Us" />} />
+        <Route path="contact" element={<Contact />} />
       </Route>
     </Routes>
   );

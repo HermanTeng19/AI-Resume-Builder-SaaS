@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, FileText, CheckCircle, ShieldCheck, Target, PenTool, Download, UploadCloud } from 'lucide-react';
+import { ArrowRight, CheckCircle, ShieldCheck, Target, PenTool, Download, UploadCloud } from 'lucide-react';
 
 const modules = import.meta.glob('../content/blog/*.md', { query: '?raw', import: 'default', eager: true });
 const articles = Object.keys(modules).map((path) => {
