@@ -1,0 +1,31 @@
+Johnathan Doe
+johndoe88@email.com | (555) 123-4567
+San Francisco, CA
+LinkedIn: linkedin.com/in/johndoe88
+
+Summary:
+I am a software engineer with a lot of experience in web dev. I like building things and working in teams. I've been doing this for over 5 years.
+
+Work Exp:
+WebCorp Inc.
+Software Developer
+Jan 2020 to Now
+- Did frontend stuff using React and some Vue.
+- Made the website load faster.
+- Fixed a lot of bugs that customers complained about.
+- Talked to the backend team to get APIs working.
+
+StartUp LLC
+Junior Dev
+June 2017 - Dec 2019
+- Built a dashboard for the boss.
+- Used Python and Django.
+- Wrote some SQL queries.
+
+School:
+University of California, Berkeley
+B.S. in Computer Science
+Graduated 2017
+
+Skills I have:
+HTML, CSS, JS, React, Node.js, Python, SQL, Git, AWS
