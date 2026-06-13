@@ -57,11 +57,12 @@ A premium, 100% client-side ATS-friendly resume builder and AI optimizer. Built 
 5. **Export**: Hit the **PDF** button to natively print a perfectly paginated, metadata-free resume.
 
 ## 🚧 Roadmap
-
-- [ ] Connect repository to Vercel/Netlify for public edge hosting.
-- [ ] Implement Vercel Serverless Functions to securely offer 3 "Free Tries" without exposing master API keys on the client.
-- [ ] Polish the mobile responsiveness of the App Tool editor layout.
-- [ ] Introduce a real-time ATS keyword matching score.
+ 
+ - [ ] Connect repository to Vercel/Netlify for public edge hosting.
+ - [x] **Serverless Backend (Contact Form)**: Implement Vercel Serverless Functions (`/api/contact.ts`) to securely process form submissions via the Resend API without exposing credentials on the client.
+ - [ ] **Backend Decision (Free Tries)**: Finalize whether the 3 "Free Tries" remain a local mock or transition to a real serverless backend to allow actual AI calls for free users.
+ - [ ] Polish the mobile responsiveness of the App Tool editor layout.
+ - [ ] Introduce a real-time ATS keyword matching score.
 
 ## 🤝 Contributing
 

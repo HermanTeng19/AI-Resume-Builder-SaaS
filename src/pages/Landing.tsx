@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, ShieldCheck, Target, PenTool, Download, UploadCloud } from 'lucide-react';
+import { ArrowRight, CheckCircle, ShieldCheck, Target, PenTool, Download, UploadCloud, Briefcase, GraduationCap } from 'lucide-react';
 
 const modules = import.meta.glob('../content/blog/*.md', { query: '?raw', import: 'default', eager: true });
 const articles = Object.keys(modules).map((path) => {
@@ -45,7 +45,7 @@ const Landing: React.FC = () => {
       </section>
 
       {/* Feature Section */}
-      <section className="features-section" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', padding: '2rem 2rem 6rem', maxWidth: '1200px', margin: '0 auto' }}>
+      <section id="features" className="features-section" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', padding: '2rem 2rem 6rem', maxWidth: '1200px', margin: '0 auto' }}>
         <div className="feature-card">
           <div className="feature-icon-wrapper"><Target size={24} className="feature-icon" /></div>
           <h3>JD-Targeted Precision</h3>
@@ -78,8 +78,67 @@ const Landing: React.FC = () => {
         </div>
       </section>
 
+      {/* How It Works / Audience Section */}
+      <section id="how-it-works" className="audience-section" style={{ padding: '6rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <div style={{ display: 'inline-block', padding: '0.5rem 1rem', borderRadius: '100px', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)', fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '1rem' }}>
+            HOW IT WORKS
+          </div>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, letterSpacing: '-0.02em', marginBottom: '1.5rem' }}>One Platform, Every Career Stage</h2>
+          <p style={{ fontSize: '1.25rem', color: 'var(--text-muted)', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
+            Whether you're a seasoned executive optimizing for strict ATS parsers or a recent graduate needing impactful copy, our AI adapts to your needs.
+          </p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem' }}>
+          {/* Pro Card */}
+          <div className="glass-card" style={{ padding: '3rem', borderRadius: '24px', border: '1px solid var(--border-color)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'linear-gradient(90deg, var(--primary-color), transparent)' }}></div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+              <div style={{ padding: '1rem', borderRadius: '16px', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)' }}>
+                <Briefcase size={28} style={{ color: 'var(--primary-color)' }} />
+              </div>
+              <div>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: 0 }}>Experienced Pros</h3>
+                <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Format & Optimize</span>
+              </div>
+            </div>
+            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '2.5rem', flex: 1 }}>
+              Skip the manual formatting. Directly generate <strong>ATS-optimized structured resumes</strong> with real-time preview. Ensure your rich experience parses flawlessly into any HR system.
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-color)' }}><CheckCircle size={20} style={{ color: 'var(--primary-color)' }} /> Real-time WYSIWYG preview</li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-color)' }}><CheckCircle size={20} style={{ color: 'var(--primary-color)' }} /> Strict ATS-compliant templates</li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-color)' }}><CheckCircle size={20} style={{ color: 'var(--primary-color)' }} /> Instant PDF & Word (.docx) export</li>
+            </ul>
+          </div>
+
+          {/* Newcomer Card */}
+          <div className="glass-card" style={{ padding: '3rem', borderRadius: '24px', border: '1px solid var(--border-color)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'linear-gradient(90deg, #10b981, transparent)' }}></div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+              <div style={{ padding: '1rem', borderRadius: '16px', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)' }}>
+                <GraduationCap size={28} style={{ color: '#10b981' }} />
+              </div>
+              <div>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: 0 }}>Fresh Graduates & Juniors</h3>
+                <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Enhance & Rewrite</span>
+              </div>
+            </div>
+            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '2.5rem', flex: 1 }}>
+              Turn academic projects and internships into compelling achievements. Use our <strong>fine-tuned AI to rewrite your experiences</strong>, making your resume instantly attractive to recruiters.
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-color)' }}><CheckCircle size={20} style={{ color: '#10b981' }} /> Smart STAR method injection</li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-color)' }}><CheckCircle size={20} style={{ color: '#10b981' }} /> Action verb enhancements</li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-color)' }}><CheckCircle size={20} style={{ color: '#10b981' }} /> Automatic skills extraction & sorting</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* Latest Insights Section */}
-      <section className="insights-section">
+      <section id="insights" className="insights-section">
         <div className="section-header">
           <h2>Latest from our ATS Researchers</h2>
           <Link to="/blog" className="view-all-link">View all guides <ArrowRight size={16} /></Link>

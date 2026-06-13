@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vercel/node": "^5.8.17",
     "docx": "^9.7.1",
     "file-saver": "^2.0.5",
     "lucide-react": "^1.17.0",
@@ -21,7 +22,8 @@
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.17.0",
     "rehype-raw": "^7.0.0",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "resend": "^6.12.4"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

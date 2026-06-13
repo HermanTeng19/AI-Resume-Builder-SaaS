@@ -3,15 +3,39 @@ import { Mail, MessageSquare, CheckCircle } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    // When using Web3Forms or Formspree in production, you can let the form submit natively
-    // or handle it via fetch() to stay on the page.
-    // For now, we simulate the submission for the mockup.
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setTimeout(() => {
+    setIsSubmitting(true);
+    setErrorMsg('');
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: `${formData.get('name')} ${formData.get('last_name')}`.trim(),
+      email: formData.get('email'),
+      topic: formData.get('subject'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message. Please try again later.');
+      }
+
       setIsSubmitted(true);
-    }, 800);
+    } catch (err: any) {
+      setErrorMsg(err.message || 'An error occurred.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -91,10 +115,13 @@ const Contact: React.FC = () => {
             <>
               <h2 style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#0f172a' }}>Send a Message</h2>
               
-              <form action="https://api.web3forms.com/submit" method="POST" onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 
-                {/* Replace with real Web3Forms Access Key later */}
-                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE" />
+                {errorMsg && (
+                  <div style={{ padding: '1rem', backgroundColor: '#fee2e2', color: '#b91c1c', borderRadius: '8px', fontSize: '0.95rem' }}>
+                    {errorMsg}
+                  </div>
+                )}
                 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
                   <div className="form-group" style={{ marginBottom: 0 }}>
@@ -129,8 +156,8 @@ const Contact: React.FC = () => {
                   <textarea name="message" required rows={5} placeholder="If reporting a bug, please include screenshots of the parsed output vs your original PDF..." style={{ width: '100%', padding: '0.75rem', border: '1px solid #cbd5e1', borderRadius: '8px', fontSize: '1rem', resize: 'vertical' }}></textarea>
                 </div>
 
-                <button type="submit" className="btn-cohere" style={{ padding: '1rem', fontSize: '1.1rem', marginTop: '0.5rem' }}>
-                  Send Message
+                <button type="submit" disabled={isSubmitting} className="btn-cohere" style={{ padding: '1rem', fontSize: '1.1rem', marginTop: '0.5rem', opacity: isSubmitting ? 0.7 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer' }}>
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
                 
                 <p style={{ fontSize: '0.8rem', color: '#94a3b8', textAlign: 'center', marginTop: '1rem' }}>
