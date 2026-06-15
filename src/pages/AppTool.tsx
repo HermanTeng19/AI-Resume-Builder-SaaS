@@ -3,9 +3,6 @@ import OpenAI from 'openai';
 import { Upload, FileText, User, Briefcase, GraduationCap, Code, Sparkles, Eye, EyeOff, Key, Trash2, CheckCircle2, XCircle, Settings, Server, ChevronDown, Download } from 'lucide-react';
 import { Document, Packer, Paragraph, TextRun, HeadingLevel } from 'docx';
 import { saveAs } from 'file-saver';
-import { parseResumeContent } from '../utils/parser';
-import { generateSuggestions } from '../utils/openai';
-import { jsPDF } from 'jspdf';
 import { SEO } from '../components/SEO';
 import { generateParsePrompt, generateOptimizeBulletsPrompt, generateTailorSkillsPrompt, generateOptimizeSummaryPrompt } from '../lib/prompts';
 
@@ -277,44 +274,7 @@ const Home: React.FC = () => {
     return null;
   };
 
-  const DEMO_TEMPLATES = [
-    {
-      title: "Senior Product Manager",
-      data: {
-        personalInfo: { fullName: "Alex Chen", jobTitle: "Senior Product Manager", email: "alex.chen@example.com", phone: "(555) 019-2834", location: "New York, NY", linkedin: "linkedin.com/in/alexchen", summary: "Data-driven Senior Product Manager with 7+ years of experience leading cross-functional teams to deliver high-impact B2B SaaS solutions. Proven track record of increasing user retention by 40% and driving $5M+ in ARR." },
-        experience: [
-          { id: '1', company: 'Acme Software', role: 'Senior Product Manager', startDate: '2021', endDate: 'Present', description: '- Spearheaded the launch of a new AI-powered analytics dashboard, increasing daily active users by 35%.\n- Orchestrated a team of 15 engineers and designers through 12 successful sprint cycles.\n- Conducted 50+ user interviews to redefine product roadmap and prioritize key features.' },
-          { id: '2', company: 'TechStart Inc.', role: 'Product Manager', startDate: '2018', endDate: '2021', description: '- Directed the transition to an agile framework, reducing time-to-market for core features by 25%.\n- Grew product revenue by $2M year-over-year through strategic pricing optimization.' }
-        ],
-        education: [{ id: '1', school: 'New York University', degree: 'MBA', year: '2018' }, { id: '2', school: 'Cornell University', degree: 'B.S. Computer Science', year: '2014' }],
-        skills: "Product Strategy, Agile/Scrum, User Discovery, SQL, Jira, Mixpanel, A/B Testing"
-      }
-    },
-    {
-      title: "Frontend Engineer",
-      data: {
-        personalInfo: { fullName: "Sarah Jenkins", jobTitle: "Lead Frontend Engineer", email: "sarah.j@example.com", phone: "(555) 234-5678", location: "San Francisco, CA", linkedin: "linkedin.com/in/sarahjenkins", summary: "UI-focused Lead Frontend Engineer specializing in React and Next.js. Passionate about web accessibility, performance optimization, and building highly scalable design systems used by millions." },
-        experience: [
-          { id: '1', company: 'FinTech Solutions', role: 'Lead Frontend Engineer', startDate: '2020', endDate: 'Present', description: '- Architected a micro-frontend architecture using Webpack Module Federation, cutting build times by 50%.\n- Mentored 6 junior developers and established code review guidelines.\n- Migrated a legacy monolithic dashboard to React 18, improving Lighthouse scores from 65 to 98.' },
-          { id: '2', company: 'Creative Agency', role: 'Web Developer', startDate: '2017', endDate: '2020', description: '- Engineered highly interactive marketing landing pages using Three.js and GSAP.\n- Integrated headless CMS solutions (Sanity) reducing content update overhead by 40%.' }
-        ],
-        education: [{ id: '1', school: 'University of Washington', degree: 'B.S. Informatics', year: '2017' }],
-        skills: "React, TypeScript, Next.js, Redux, Tailwind CSS, GraphQL, Jest, Cypress"
-      }
-    },
-    {
-      title: "Data Analyst",
-      data: {
-        personalInfo: { fullName: "David Park", jobTitle: "Data Analyst", email: "david.park@example.com", phone: "(555) 987-6543", location: "Chicago, IL", linkedin: "linkedin.com/in/davidpark", summary: "Detail-oriented Data Analyst skilled in transforming complex datasets into actionable business intelligence. Expertise in SQL, Tableau, and Python data pipelines." },
-        experience: [
-          { id: '1', company: 'Global Retail Corp', role: 'Senior Data Analyst', startDate: '2021', endDate: 'Present', description: '- Designed automated Tableau dashboards tracking $50M+ in inventory across 300 stores.\n- Optimized complex SQL queries, reducing report generation time from 2 hours to 5 minutes.\n- Partnered with marketing to identify customer churn patterns, saving an estimated $1M annually.' },
-          { id: '2', company: 'Startup Analytics', role: 'Data Analyst', startDate: '2019', endDate: '2021', description: '- Cleaned and processed 500GB+ of raw user event data using Python and Pandas.\n- Built predictive models for user engagement using Scikit-Learn.' }
-        ],
-        education: [{ id: '1', school: 'University of Illinois', degree: 'M.S. Data Science', year: '2019' }],
-        skills: "Python, SQL, Tableau, Power BI, Pandas, Scikit-Learn, Snowflake, dbt"
-      }
-    }
-  ];
+
 
   const parseResumeWithAI = async () => {
     if (!rawText.trim()) {
@@ -1238,8 +1198,9 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+      </div>
     </>
   );
 };
 
-export default AppTool;
+export default Home;

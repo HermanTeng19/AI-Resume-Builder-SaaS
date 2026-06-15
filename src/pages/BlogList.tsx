@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookOpen, Search } from 'lucide-react';
+import { BookOpen, Search } from 'lucide-react';
 import { imageMap } from '../content/imageMap';
 import { SEO } from '../components/SEO';
 
