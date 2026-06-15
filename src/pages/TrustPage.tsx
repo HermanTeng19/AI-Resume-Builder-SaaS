@@ -72,20 +72,20 @@ const TermsOfServiceContent = () => (
 
 const AboutUsContent = () => (
   <div className="trust-document">
-    <h2>1. The Hiring System is Broken</h2>
-    <p>Every year, millions of highly qualified candidates are automatically rejected by Applicant Tracking Systems (ATS) simply because they don't know the precise semantic keywords the algorithm is looking for. The modern job hunt is no longer just about your skills; it's about reverse-engineering the machine that reads your resume.</p>
+    <h2>1. Demystifying the Modern Job Market</h2>
+    <p>The modern job hunt has evolved far beyond just polishing a resume. From navigating algorithmic filters to mastering behavioral interviews, negotiating offers, and strategically planning your career trajectory—the rules of the game have fundamentally changed. We believe that securing your dream role shouldn't require you to guess what companies are looking for.</p>
     
     <h2>2. Who We Are</h2>
-    <p>We are a collective of former FAANG recruiters, hiring managers, and software engineers who have spent years operating the very ATS platforms that filter candidates out. We've seen behind the curtain, and we decided it was time to level the playing field.</p>
-    <p>We created Career Insight Labs as a dual-purpose platform: a definitive knowledge base for understanding how modern hiring algorithms work, and an advanced tool to help you craft a resume that speaks their language.</p>
+    <p>We are a collective of former FAANG recruiters, seasoned hiring managers, and software engineers who have evaluated thousands of candidates. We've been on the other side of the interview table and operated the systems that make hiring decisions. We decided it was time to pull back the curtain and share these insider playbooks with everyone.</p>
+    <p>We evolved Career Insight Labs into a comprehensive professional development platform: offering a definitive knowledge base for broad career growth strategies, alongside our advanced AI tool to help you execute them perfectly.</p>
 
     <h2>3. Our Philosophy: Extreme Privacy</h2>
-    <p>When we set out to build our AI optimization tool, we noticed a disturbing trend: almost every other "free" resume builder on the internet secretly harvests your resume data, contact info, and work history to sell to data brokers or train proprietary models.</p>
-    <p><strong>We refused to do that.</strong></p>
-    <p>That's why we engineered our tool on a strictly local, "Bring Your Own Key" (BYOK) architecture. Your data never touches a database we own. Everything happens locally in your browser. We believe your professional history is yours, and yours alone.</p>
+    <p>Even as our platform expands into broader career guidance, our core technical principles remain unchanged. When we built our AI optimization tools, we noticed a disturbing trend: many "free" platforms secretly harvest your resume data, contact info, and work history to sell to data brokers.</p>
+    <p><strong>We refuse to do that.</strong></p>
+    <p>Our AI tools run on a strictly local, "Bring Your Own Key" (BYOK) architecture. Your data never touches a database we own. Everything processes locally in your browser. We believe your professional history is yours, and yours alone.</p>
 
     <h2>4. Our Mission</h2>
-    <p>Our goal is simple: to ensure that the best candidate gets the interview, regardless of their resume-writing skills. By combining our insider knowledge of ATS mechanics with cutting-edge AI, we're giving you the ultimate unfair advantage.</p>
+    <p>Our mission is simple: to empower ambitious professionals to take control of their career trajectories. By combining our insider industry knowledge with cutting-edge, privacy-first AI tools, we're giving you the insights, strategies, and confidence to land the roles you deserve.</p>
   </div>
 );
 
