@@ -5,14 +5,7 @@ import { SEO } from '../components/SEO';
 
 const modules = import.meta.glob('../content/blog/*.md', { query: '?raw', import: 'default', eager: true });
 
-const imageMap: Record<string, string> = {
-  '01-2026-ATS-Algorithm-Semantic-Understanding': '/blog-images/ats_brain_parser.png',
-  '02-ATS-75-Percent-Rejection-Myth': '/blog-images/ats_filter_myth.png',
-  '03-Avoid-AI-Detector-When-Using-ChatGPT': '/blog-images/ai_detector_stealth.png',
-  '04-Silicon-Valley-Minimalist-Resume-vs-Canva': '/blog-images/minimalist_silicon_valley.png',
-  '05-ACR-Formula-Tech-Resume': '/blog-images/acr_formula_resume.png',
-  '06-Skills-Based-Hiring-Tech-Stack': '/blog-images/skills_based_hiring.png',
-};
+import { imageMap } from '../content/imageMap';
 
 const defaultImages = Object.values(imageMap);
 
@@ -20,6 +13,24 @@ const articles = Object.keys(modules).map((path) => {
   const slug = path.split('/').pop()?.replace('.md', '');
   const content = modules[path] as string;
   const match = content.match(/^#\s+(.*)/m);
+  const title = match ? match[1] : slug;
+  
+  const dateMatch = content.match(/<br\/>(.*?)\*/);
+  const dateStr = dateMatch ? dateMatch[1].trim() : 'Unknown';
+  const timestamp = dateStr !== 'Unknown' ? new Date(dateStr).getTime() : 0;
+
+  const words = content.trim().split(/\s+/).length;
+  const readingTime = Math.max(1, Math.ceil(words / 200));
+
+  const previewText = content
+    .replace(/^#.*\n/m, '')
+    .replace(/^>.*$/gm, '')
+    .replace(/---/g, '')
+    .replace(/<[^>]+>/g, '')
+    .replace(/[#*_>]/g, '')
+    .replace(/^\s*[\r\n]/gm, '')
+    .trim()
+    .substring(0, 140) + '...';
   
   let image = imageMap[slug || ''];
   if (!image) {
@@ -27,8 +38,10 @@ const articles = Object.keys(modules).map((path) => {
     image = defaultImages[hash % defaultImages.length];
   }
   
-  return { slug, title: match ? match[1] : slug, image };
-}).slice(0, 6); // Get latest 6
+  return { slug, title, image, previewText, readingTime, dateStr, timestamp };
+})
+.sort((a, b) => b.timestamp - a.timestamp)
+.slice(0, 6);
 
 const testimonials = [
   {
@@ -226,15 +239,26 @@ const Landing: React.FC = () => {
       {/* Latest Insights Section */}
       <section id="insights" className="insights-section">
         <div className="section-header">
-          <h2>Latest from our ATS Researchers</h2>
+          <h2>Featured Insights & Guides</h2>
           <Link to="/blog" className="view-all-link">View all guides <ArrowRight size={16} /></Link>
         </div>
         <div className="articles-grid">
-          {articles.map(article => (
-            <Link to={`/blog/${article.slug}`} key={article.slug} className="article-card glass-card" style={{ display: 'flex', flexDirection: 'column' }}>
-              <img src={article.image} alt={article.title} style={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '12px', marginBottom: '1.5rem', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }} />
-              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', marginBottom: '1rem', color: 'var(--ink)', fontWeight: 500, lineHeight: 1.3 }}>{article.title}</h3>
-              <span className="article-read-more" style={{ marginTop: 'auto' }}>Read full analysis &rarr;</span>
+          {articles.map((article, idx) => (
+            <Link 
+              to={`/blog/${article.slug}`} 
+              key={article.slug} 
+              className="flat-grid-card" 
+              style={{ animation: `fadeInUp ${1 + Math.min(idx, 5) * 0.1}s cubic-bezier(0.16, 1, 0.3, 1)` }}
+            >
+              <img src={article.image} alt={article.title} />
+              <div className="card-content">
+                <h3>{article.title}</h3>
+                <p>{article.previewText}</p>
+                <div className="card-meta">
+                  <span>{article.readingTime} min read</span>
+                  <span>{article.dateStr}</span>
+                </div>
+              </div>
             </Link>
           ))}
         </div>
