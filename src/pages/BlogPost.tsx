@@ -4,6 +4,8 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import { ArrowLeft, Clock, ArrowUp } from 'lucide-react';
+import { imageMap } from '../content/imageMap';
+import { SEO } from '../components/SEO';
 
 const modules = import.meta.glob('../content/blog/*.md', { query: '?raw', import: 'default', eager: true });
 
@@ -17,7 +19,20 @@ const BlogPost: React.FC = () => {
     window.scrollTo(0, 0); // Always start reading from the top
     const path = `../content/blog/${slug}.md`;
     if (modules[path]) {
-      const text = modules[path] as string;
+      let text = modules[path] as string;
+      
+      // Inject the cover image after the first "---" separator
+      const imageUrl = slug ? imageMap[slug] : undefined;
+      if (imageUrl) {
+        const separator = '---';
+        const splitIndex = text.indexOf(separator);
+        if (splitIndex !== -1) {
+          const before = text.substring(0, splitIndex + separator.length);
+          const after = text.substring(splitIndex + separator.length);
+          text = `${before}\n\n<img src="${imageUrl}" alt="Article Cover" class="blog-cover-image" />\n\n${after}`;
+        }
+      }
+      
       setContent(text);
       
       // Simple reading time calculation (approx 200 words per minute)
@@ -46,8 +61,20 @@ const BlogPost: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const match = content.match(/^#\s+(.*)/m);
+  const title = match ? match[1] : (slug ? slug.replace(/-/g, ' ') : 'Blog Post');
+  
+  // Extract summary for description if possible
+  const paragraphMatch = content.match(/\n([A-Za-z].*?)\n/);
+  const description = paragraphMatch ? paragraphMatch[1].slice(0, 150) + '...' : `Read ${title} on Career Insight Labs.`;
+
   return (
     <div className="blog-post-wrapper">
+      <SEO 
+        title={`${title} | Career Insight Labs`}
+        description={description}
+        url={`https://careerinsightlabs.com/blog/${slug}`}
+      />
       <div className="blog-reading-container">
         <Link to="/blog" className="back-link">
           <ArrowLeft size={16} className="back-icon" /> Back to all guides

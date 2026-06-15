@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "logo-design-guide": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "skillPath": "guides/design/logo-design-guide/SKILL.md",
+      "computedHash": "a957775d9bb97b5ed1338087df235fa24a7d55e83d5a39d386be2b5d96bb9ce9"
+    },
     "ui-ux-pro-max": {
       "source": "nexu-io/open-design",
       "sourceType": "github",

@@ -1,6 +1,6 @@
 # The Recruiter's Reading Habit: F-Pattern Visual Hierarchy That Captures Attention in 6 Seconds
 
-> *Author: Senior Tech Recruiter @ Career Insight Labs | Last Updated: June 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Jan 13, 2026*
 
 ---
 
@@ -344,7 +344,7 @@ To summarize:
 
 Few candidates solve both. Either the ATS passes but the visual layout collapses, or Canva looks beautiful but the ATS auto-rejects.
 
-This is the core promise of **Career Insight Labs**:
+This is the core promise of **AI-Resume-Builder**:
 
 **Our real-time preview panel is designed against the eye-tracking heatmaps of top recruiters.**
 
@@ -355,7 +355,7 @@ This is the core promise of **Career Insight Labs**:
 
 You only need to tell your work story clearly. We win both visual wars on your behalf.
 
-👉 [Try Career Insight Labs for free — see how your resume scores on the 6-second scan](#)
+👉 [Try AI-Resume-Builder for free — see how your resume scores on the 6-second scan](#)
 
 ---
 
@@ -378,25 +378,25 @@ You only need to tell your work story clearly. We win both visual wars on your b
   "@type": "Article",
   "headline": "The Recruiter's Reading Habit: F-Pattern Visual Hierarchy That Captures Attention in 6 Seconds",
   "description": "A deep analysis of the F-Pattern Eye Movement that recruiters use when scanning resumes, breaking down 5 visual anchor designs (top positioning, section headings, Title line, bullet prefixes, Technical Foundation grouping) with a Before/After visual heatmap rebuild.",
-  "image": "https://careerinsightlabs.com/og/f-pattern-resume-design.png",
+  "image": "https://ai-resume-builder.com/og/f-pattern-resume-design.png",
   "author": {
     "@type": "Person",
     "name": "Senior Tech Recruiter",
-    "url": "https://careerinsightlabs.com/about"
+    "url": "https://ai-resume-builder.com/about"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Career Insight Labs",
+    "name": "AI-Resume-Builder",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://careerinsightlabs.com/logo.png"
+      "url": "https://ai-resume-builder.com/logo.png"
     }
   },
   "datePublished": "2026-06-06",
   "dateModified": "2026-06-06",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://careerinsightlabs.com/blog/f-pattern-visual-hierarchy-6-seconds"
+    "@id": "https://ai-resume-builder.com/blog/f-pattern-visual-hierarchy-6-seconds"
   },
   "keywords": "F-pattern resume layout, eye-tracking heatmap resume, 6 second resume scan, recruiter visual hierarchy, resume bullet prefix, ATS plus human screening"
 }

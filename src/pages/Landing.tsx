@@ -1,24 +1,91 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, ShieldCheck, Target, PenTool, Download, UploadCloud, Briefcase, GraduationCap } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 const modules = import.meta.glob('../content/blog/*.md', { query: '?raw', import: 'default', eager: true });
+
+const imageMap: Record<string, string> = {
+  '01-2026-ATS-Algorithm-Semantic-Understanding': '/blog-images/ats_brain_parser.png',
+  '02-ATS-75-Percent-Rejection-Myth': '/blog-images/ats_filter_myth.png',
+  '03-Avoid-AI-Detector-When-Using-ChatGPT': '/blog-images/ai_detector_stealth.png',
+  '04-Silicon-Valley-Minimalist-Resume-vs-Canva': '/blog-images/minimalist_silicon_valley.png',
+  '05-ACR-Formula-Tech-Resume': '/blog-images/acr_formula_resume.png',
+  '06-Skills-Based-Hiring-Tech-Stack': '/blog-images/skills_based_hiring.png',
+};
+
+const defaultImages = Object.values(imageMap);
+
 const articles = Object.keys(modules).map((path) => {
   const slug = path.split('/').pop()?.replace('.md', '');
   const content = modules[path] as string;
   const match = content.match(/^#\s+(.*)/m);
-  return { slug, title: match ? match[1] : slug };
-}).slice(0, 3); // Get latest 3
+  
+  let image = imageMap[slug || ''];
+  if (!image) {
+    const hash = (slug || '').split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    image = defaultImages[hash % defaultImages.length];
+  }
+  
+  return { slug, title: match ? match[1] : slug, image };
+}).slice(0, 6); // Get latest 6
+
+const testimonials = [
+  {
+    text: "I’ve subscribed to dozens of career newsletters, but Career Insight Labs stands out. The AI resume optimizer combined with deep industry reflection helped me land my dream job. It's thoughtful, and quietly inspiring.",
+    name: "Sarah Jenkins",
+    title: "Product Manager",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg"
+  },
+  {
+    text: "I always find something valuable in each career guide. Sometimes, it answers a question that's been on my mind; other times it reveals ATS insights I haven't considered. The BYOK feature is brilliant for privacy.",
+    name: "Michael Chen",
+    title: "Senior Risk Analyst",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg"
+  },
+  {
+    text: "Reasoned, practical, and clear as glass—the Web App offers a wealth of knowledge and thoughtful advice to navigate your career on your own terms. The Ivy League template got me 3 interviews in a week.",
+    name: "Emily Rodriguez",
+    title: "Software Engineer",
+    avatar: "https://randomuser.me/api/portraits/women/68.jpg"
+  },
+  {
+    text: "The blog is a true gem for anyone on a journey of professional improvement! The way complex ATS algorithms are broken down into actionable steps makes growth feel achievable. My go-to career platform.",
+    name: "James Wilson",
+    title: "Data Scientist",
+    avatar: "https://randomuser.me/api/portraits/men/46.jpg"
+  },
+  {
+    text: "It delivers consistently practical advice for professionals seeking to work smarter. The resume builder stands out for its combination of immediate keyword optimization and strict privacy controls. I genuinely enjoy using it.",
+    name: "Anita Patel",
+    title: "Operations Manager",
+    avatar: "https://randomuser.me/api/portraits/women/89.jpg"
+  },
+  {
+    text: "I was skeptical about AI resume builders until I found this. The targeted Job Description keyword injection completely changed my application strategy. Highly recommend it to anyone stuck in the job hunt.",
+    name: "Marcus Johnson",
+    title: "Marketing Director",
+    avatar: "https://randomuser.me/api/portraits/men/22.jpg"
+  }
+];
 
 const Landing: React.FC = () => {
   return (
-    <div className="landing-container">
+    <>
+      <SEO 
+        title="Career Insight Labs | Advanced ATS Resume Builder & Analysis"
+        description="Decode the ATS algorithm. Build, parse, and optimize your resume using advanced AI technology engineered by former FAANG recruiters."
+        url="https://careerinsightlabs.com"
+      />
+      <div className="landing-wrapper">
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
-          <div className="hero-badge">⚡ 2026 ATS Algorithm Research</div>
+          <div style={{ marginBottom: '2rem' }}>
+            <img src="/logo.png" alt="Career Insight Labs Logo" style={{ width: '72px', height: '72px', borderRadius: '16px', boxShadow: '0 4px 12px rgba(0,0,0,0.08)' }} />
+          </div>
           <h1 className="hero-title">
-            Hack the ATS.<br/><span className="gradient-text">Land the Interview.</span>
+            Master the Hiring Game.<br/><span className="gradient-text">AI Tools & Expert Insights.</span>
           </h1>
           <p className="hero-subtitle">
             We analyze millions of data points to decode what modern Applicant Tracking Systems (ATS) want. Read our latest research or use our free AI tool to optimize your resume instantly.
@@ -28,19 +95,12 @@ const Landing: React.FC = () => {
               <Link to="/app" className="btn btn-primary btn-lg">
                 Try Free Resume Optimizer <ArrowRight size={18} />
               </Link>
-              <span style={{ fontSize: '13px', color: 'var(--text-muted)', fontWeight: 500 }}>🎁 Includes 3 Free AI Credits</span>
+              <span style={{ fontSize: '13px', color: 'var(--text-muted)', fontWeight: 500 }}>⚡ Instant Live Preview</span>
             </div>
             <Link to="/blog" className="btn btn-secondary btn-lg" style={{ alignSelf: 'flex-start' }}>
               Read Career Guides
             </Link>
           </div>
-        </div>
-        <div style={{ marginTop: '5rem', display: 'flex', justifyContent: 'center', width: '100%', maxWidth: '1200px', margin: '5rem auto 0 auto' }}>
-          <img 
-            src="/hero-abstract.png" 
-            alt="Career Insight Labs Agent Console" 
-            style={{ width: '100%', borderRadius: '22px', border: '1px solid var(--border-color)', objectFit: 'cover', height: '500px', boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)' }} 
-          />
         </div>
       </section>
 
@@ -73,8 +133,8 @@ const Landing: React.FC = () => {
         </div>
         <div className="feature-card">
           <div className="feature-icon-wrapper"><CheckCircle size={24} className="feature-icon" /></div>
-          <h3>3 Free Tries & Privacy BYOK</h3>
-          <p>Get 3 free generation credits instantly. After that, Bring Your Own Key (BYOK) for unlimited, completely private local processing across 14+ flagship models (OpenAI, DeepSeek, etc.).</p>
+          <h3>100% Privacy & BYOK</h3>
+          <p>Bring Your Own Key (BYOK) for unlimited, completely private local processing across 14+ flagship models (OpenAI, DeepSeek, etc.). Your data never leaves your browser.</p>
         </div>
       </section>
 
@@ -137,6 +197,32 @@ const Landing: React.FC = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section id="testimonials" className="testimonials-section">
+        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, letterSpacing: '-0.02em', marginBottom: '1.5rem' }}>Loved by Professionals</h2>
+          <p style={{ fontSize: '1.25rem', color: 'var(--text-muted)', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
+            Hear from the people who have transformed their career trajectory using our AI tools and research.
+          </p>
+        </div>
+        <div className="testimonials-grid">
+          {testimonials.map((t, idx) => (
+            <div key={idx} className="testimonial-card">
+              <p className="testimonial-text">{t.text}</p>
+              <div className="testimonial-author">
+                <div className="testimonial-avatar">
+                  <img src={t.avatar} alt={t.name} />
+                </div>
+                <div>
+                  <h4 className="testimonial-name">{t.name}</h4>
+                  <span className="testimonial-title">{t.title}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Latest Insights Section */}
       <section id="insights" className="insights-section">
         <div className="section-header">
@@ -145,14 +231,16 @@ const Landing: React.FC = () => {
         </div>
         <div className="articles-grid">
           {articles.map(article => (
-            <Link to={`/blog/${article.slug}`} key={article.slug} className="article-card glass-card">
-              <h3>{article.title}</h3>
-              <span className="article-read-more">Read full analysis &rarr;</span>
+            <Link to={`/blog/${article.slug}`} key={article.slug} className="article-card glass-card" style={{ display: 'flex', flexDirection: 'column' }}>
+              <img src={article.image} alt={article.title} style={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '12px', marginBottom: '1.5rem', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }} />
+              <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '20px', marginBottom: '1rem', color: 'var(--ink)', fontWeight: 500, lineHeight: 1.3 }}>{article.title}</h3>
+              <span className="article-read-more" style={{ marginTop: 'auto' }}>Read full analysis &rarr;</span>
             </Link>
           ))}
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 };
 

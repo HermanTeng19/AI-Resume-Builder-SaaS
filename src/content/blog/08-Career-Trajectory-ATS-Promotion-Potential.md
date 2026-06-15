@@ -1,6 +1,6 @@
 # Career Trajectory Analysis: How Modern ATS Decides Whether You Have "Promotion Potential"
 
-> *Author: Senior Tech Recruiter @ Career Insight Labs | Last Updated: June 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Jan 10, 2026*
 
 ---
 
@@ -338,7 +338,7 @@ Honestly, by the time you've read this, you might be feeling something:
 
 That's the new reality. **The Career Trajectory Analyzer is now a hidden initial-screening metric in major companies — you have to understand the rules to play the game.**
 
-That's what our **Career Insight Labs Career Trajectory Optimizer** does:
+That's what our **AI-Resume-Builder Career Trajectory Optimizer** does:
 
 - Auto-analyzes your resume's 5 sub-metric scores (Velocity / Tenure / Scope / Gap / Coherence)
 - Identifies your "trajectory problems" (gaps / job hopping / lateral title / regression / cross-domain)
@@ -347,7 +347,7 @@ That's what our **Career Insight Labs Career Trajectory Optimizer** does:
 
 It also auto-smooths your timeline so career trajectory appears more continuous in the ATS view — while keeping all content truthful and verifiable.
 
-👉 [Try the Career Insight Labs Career Trajectory Optimizer for free — let the algorithm re-evaluate your potential](#)
+👉 [Try the AI-Resume-Builder Career Trajectory Optimizer for free — let the algorithm re-evaluate your potential](#)
 
 ---
 
@@ -370,25 +370,25 @@ It also auto-smooths your timeline so career trajectory appears more continuous 
   "@type": "Article",
   "headline": "Career Trajectory Analysis: How Modern ATS Decides Whether You Have Promotion Potential",
   "description": "A deep dive into the Career Trajectory Analyzer used by Greenhouse, Workday, and Eightfold — Title Velocity, Tenure Stability, Scope Expansion, Gap Penalty, and Domain Coherence — with strategic repackaging patterns for employment gaps, job hopping, lateral title moves, regressions, and domain pivots.",
-  "image": "https://careerinsightlabs.com/og/career-trajectory-ats.png",
+  "image": "https://ai-resume-builder.com/og/career-trajectory-ats.png",
   "author": {
     "@type": "Person",
     "name": "Senior Tech Recruiter",
-    "url": "https://careerinsightlabs.com/about"
+    "url": "https://ai-resume-builder.com/about"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Career Insight Labs",
+    "name": "AI-Resume-Builder",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://careerinsightlabs.com/logo.png"
+      "url": "https://ai-resume-builder.com/logo.png"
     }
   },
   "datePublished": "2026-06-06",
   "dateModified": "2026-06-06",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://careerinsightlabs.com/blog/career-trajectory-ats-promotion-potential"
+    "@id": "https://ai-resume-builder.com/blog/career-trajectory-ats-promotion-potential"
   },
   "keywords": "Career Trajectory Analyzer, ATS promotion potential, employment gap resume, job hopper resume, Eightfold AI hiring, career velocity score"
 }

@@ -1,6 +1,6 @@
 # How to Write GenAI Skills on Your Resume: Stop Writing "Prompt Engineering"
 
-> *Author: Senior Tech Recruiter @ Career Insight Labs | Last Updated: June 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Jan 4, 2026*
 
 ---
 
@@ -312,7 +312,7 @@ A final point worth saying out loud:
 
 Writing GenAI experience is paradoxical — **the amount of AI engineering you've done doesn't necessarily determine how well you describe it.** Some engineers have run RAG at millions of QPS in production but their resume reads `Built a chatbot using OpenAI`.
 
-Our **Career Insight Labs** team builds with GenAI ourselves. We designed a **GenAI Experience Completer** module:
+Our **AI-Resume-Builder** team builds with GenAI ourselves. We designed a **GenAI Experience Completer** module:
 
 - Guided Q&A ("What embedding model did your RAG use? Did you implement hybrid retrieval? How large was your eval set?") to help you recall production details
 - Auto-generates bullets on the dual axis of `model performance + business impact`
@@ -321,7 +321,7 @@ Our **Career Insight Labs** team builds with GenAI ourselves. We designed a **Ge
 
 After all, **if you can't write a GenAI resume well, the AI Engineer role hasn't quite recognized you yet.**
 
-👉 [Try the Career Insight Labs GenAI Experience Completer for free — align your AI experience with the 2026 standard](#)
+👉 [Try the AI-Resume-Builder GenAI Experience Completer for free — align your AI experience with the 2026 standard](#)
 
 ---
 
@@ -344,25 +344,25 @@ After all, **if you can't write a GenAI resume well, the AI Engineer role hasn't
   "@type": "Article",
   "headline": "How to Write GenAI Skills on Your Resume: Stop Writing Prompt Engineering",
   "description": "An in-depth analysis of the 5 high-paying GenAI experience templates for 2026 — production RAG deployment, LLM cost/latency optimization, LLM Evaluation, AI Agents, Fine-tuning/LoRA — with a complete Before/After case showing salary jumping from $150K to $280K.",
-  "image": "https://careerinsightlabs.com/og/genai-resume-2026.png",
+  "image": "https://ai-resume-builder.com/og/genai-resume-2026.png",
   "author": {
     "@type": "Person",
     "name": "Senior Tech Recruiter",
-    "url": "https://careerinsightlabs.com/about"
+    "url": "https://ai-resume-builder.com/about"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Career Insight Labs",
+    "name": "AI-Resume-Builder",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://careerinsightlabs.com/logo.png"
+      "url": "https://ai-resume-builder.com/logo.png"
     }
   },
   "datePublished": "2026-06-06",
   "dateModified": "2026-06-06",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://careerinsightlabs.com/blog/genai-skills-beyond-prompt-engineering"
+    "@id": "https://ai-resume-builder.com/blog/genai-skills-beyond-prompt-engineering"
   },
   "keywords": "GenAI resume 2026, RAG production resume, LLM evaluation resume, AI agent resume, LoRA fine-tuning resume, AI engineer salary, beyond prompt engineering"
 }

@@ -33,7 +33,10 @@ const MainLayout: React.FC = () => {
     <div className="layout">
       <nav className="navbar">
         <div className="navbar-brand">
-          <Link to="/" onClick={scrollToTop}>Career Insight Labs</Link>
+          <Link to="/" onClick={scrollToTop} style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+            <img src="/logo.png" alt="Career Insight Labs Logo" style={{ width: '36px', height: '36px', borderRadius: '6px' }} />
+            <span style={{ fontWeight: 700, fontSize: '1.4rem', letterSpacing: '0.01em', fontFamily: '"Playfair Display", serif' }}>Career Insight Labs</span>
+          </Link>
         </div>
         <div className="navbar-links">
           <Link to="/" onClick={scrollToTop}>Home</Link>
@@ -61,6 +64,7 @@ const MainLayout: React.FC = () => {
           <div className="footer-links">
             <Link to="/privacy-policy" onClick={scrollToTop}>Privacy Policy</Link>
             <Link to="/terms-of-service" onClick={scrollToTop}>Terms of Service</Link>
+            <Link to="/disclaimer" onClick={scrollToTop}>Disclaimer</Link>
             <Link to="/about" onClick={scrollToTop}>About Us</Link>
             <Link to="/contact" onClick={scrollToTop}>Contact</Link>
           </div>

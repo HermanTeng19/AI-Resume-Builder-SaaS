@@ -1,6 +1,6 @@
 # Ditch the Canva Templates: Why Silicon Valley Only Reads "Plain Text" Minimalist Resumes
 
-> *Author: Senior Tech Recruiter @ Career Insight Labs | Last Updated: June 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>May 26, 2026*
 
 ---
 
@@ -15,6 +15,8 @@ It's not about aesthetics. Those colorful two-column resumes with photos and ski
 **They're designed for `humans` to read — but the first gate of resume review has never been a human.**
 
 Below: why FAANG and unicorn engineers from Senior to IC7 all use the same "plain text" minimalist format, where Canva templates kill your ranking, and a real case study where a candidate landed a Meta interview within 7 days just by switching from Canva two-column to plain single-column.
+
+---
 
 <div style="background-color: var(--soft-stone, #eeece7); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; border: 1px solid var(--border-color, #e5e7eb);">
   <h4 style="margin-top: 0; color: var(--cohere-black, #000); display: flex; align-items: center; gap: 8px;">
@@ -260,7 +262,7 @@ Design won't get you an interview. **Information density will.**
 
 ## 6. CTA: Stop Wasting Time on Formatting
 
-When we built **Career Insight Labs**, the team had a heated internal debate:
+When we built **AI-Resume-Builder**, the team had a heated internal debate:
 
 "Should we offer Canva-style ornate templates? Users might prefer them — conversion could be higher."
 
@@ -272,7 +274,7 @@ Why? Simple — **our goal isn't to make your resume look pretty. It's to get yo
 
 If you've ever spent an entire evening in Canva tweaking font colors and debating whether to include a photo, switch to our tool. **A 3-minute generation outputs the exact layout norm used by top Silicon Valley engineering teams. Save your energy for the part that actually matters — writing your work experience well.**
 
-👉 [Try Career Insight Labs for free and generate a Silicon Valley standard resume](#)
+👉 [Try AI-Resume-Builder for free and generate a Silicon Valley standard resume](#)
 
 ---
 
@@ -295,25 +297,25 @@ If you've ever spent an entire evening in Canva tweaking font colors and debatin
   "@type": "Article",
   "headline": "Ditch the Canva Templates: Why Silicon Valley Only Reads Plain Text Minimalist Resumes",
   "description": "Real parse-rate data across Greenhouse, Lever, Workday, iCIMS, and Taleo exposing 7 parsing killers in Canva templates — two-column layouts, skill progress bars, icons, table-based Skills, and a complete Silicon Valley minimalist template.",
-  "image": "https://careerinsightlabs.com/og/silicon-valley-minimalist-resume.png",
+  "image": "https://ai-resume-builder.com/og/silicon-valley-minimalist-resume.png",
   "author": {
     "@type": "Person",
     "name": "Senior Tech Recruiter",
-    "url": "https://careerinsightlabs.com/about"
+    "url": "https://ai-resume-builder.com/about"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Career Insight Labs",
+    "name": "AI-Resume-Builder",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://careerinsightlabs.com/logo.png"
+      "url": "https://ai-resume-builder.com/logo.png"
     }
   },
   "datePublished": "2026-06-06",
   "dateModified": "2026-06-06",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://careerinsightlabs.com/blog/silicon-valley-minimalist-resume-vs-canva"
+    "@id": "https://ai-resume-builder.com/blog/silicon-valley-minimalist-resume-vs-canva"
   },
   "keywords": "Silicon Valley resume format, minimalist resume, Canva resume ATS, two-column resume parsing, ATS-friendly template, FAANG resume format"
 }

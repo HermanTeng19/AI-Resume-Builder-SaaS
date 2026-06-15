@@ -3,6 +3,10 @@ import OpenAI from 'openai';
 import { Upload, FileText, User, Briefcase, GraduationCap, Code, Sparkles, Eye, EyeOff, Key, Trash2, CheckCircle2, XCircle, Settings, Server, ChevronDown, Download } from 'lucide-react';
 import { Document, Packer, Paragraph, TextRun, HeadingLevel } from 'docx';
 import { saveAs } from 'file-saver';
+import { parseResumeContent } from '../utils/parser';
+import { generateSuggestions } from '../utils/openai';
+import { jsPDF } from 'jspdf';
+import { SEO } from '../components/SEO';
 import { generateParsePrompt, generateOptimizeBulletsPrompt, generateTailorSkillsPrompt, generateOptimizeSummaryPrompt } from '../lib/prompts';
 
 // --- Types ---
@@ -137,21 +141,6 @@ const Home: React.FC = () => {
   const [resumeTheme, setResumeTheme] = useState<'silicon' | 'ivy' | 'modern'>('silicon');
   const [isGenerating, setIsGenerating] = useState(false);
   const [targetJD, setTargetJD] = useState('');
-  const [freeCredits, setFreeCredits] = useState<number>(() => {
-    const stored = localStorage.getItem('ai_free_credits');
-    const lastUsed = localStorage.getItem('ai_free_credits_last_used');
-    
-    // Auto-restore 3 credits if 24 hours have passed since last use
-    if (lastUsed) {
-      const hoursSinceLastUse = (Date.now() - parseInt(lastUsed)) / (1000 * 60 * 60);
-      if (hoursSinceLastUse >= 24) {
-        localStorage.setItem('ai_free_credits', '3');
-        return 3;
-      }
-    }
-    
-    return stored ? parseInt(stored) : 3;
-  });
   
   // Import State
   const [rawText, setRawText] = useState('');
@@ -273,7 +262,7 @@ const Home: React.FC = () => {
   };
 
   // --- AI API LOGIC ---
-  const getOpenAIClient = (): OpenAI | 'MOCK' | null => {
+  const getOpenAIClient = (): OpenAI | null => {
     const currentCreds = keys[activeProvider];
     if (currentCreds.apiKey) {
       return new OpenAI({
@@ -283,15 +272,7 @@ const Home: React.FC = () => {
       });
     }
 
-    if (freeCredits > 0) {
-      const newCredits = freeCredits - 1;
-      setFreeCredits(newCredits);
-      localStorage.setItem('ai_free_credits', newCredits.toString());
-      localStorage.setItem('ai_free_credits_last_used', Date.now().toString());
-      return 'MOCK';
-    }
-
-    alert(`You have 0 free credits left. Please click the Gear icon ⚙️ to bring your own key (BYOK) for unlimited usage.`);
+    alert(`Please click the Gear icon ⚙️ to bring your own key (BYOK) for unlimited usage.`);
     setIsSettingsOpen(true);
     return null;
   };
@@ -345,21 +326,7 @@ const Home: React.FC = () => {
 
     setIsGenerating(true);
     
-    if (client === 'MOCK') {
-      const template = DEMO_TEMPLATES[Math.floor(Math.random() * DEMO_TEMPLATES.length)];
-      setTimeout(() => {
-        setResumeData(prev => ({
-          ...prev,
-          ...template.data
-        }));
-        alert(`🎁 Demo Mode: To show you the ultimate formatting and ATS optimization capabilities, we've loaded a top-tier [${template.title}] template.\n\nTo parse your actual resume text, please configure BYOK ⚙️!`);
-        setActiveTab('personal');
-        setIsGenerating(false);
-      }, 1500);
-      return;
-    }
-
-    const openai = client as OpenAI;
+    const openai = client;
     const prompt = generateParsePrompt(rawText, targetJD);
 
     try {
@@ -412,22 +379,7 @@ const Home: React.FC = () => {
 
     setIsGenerating(true);
     
-    if (client === 'MOCK') {
-      const mockResult = `- Architected highly available systems resolving complex concurrency issues\n- Streamlined deployment pipelines saving 20 hours/week\n- Mentored 5 junior engineers and scaled the team effectively`;
-      let i = 0;
-      updateExperience(expId, 'description', '');
-      const interval = setInterval(() => {
-        updateExperience(expId, 'description', (prev) => prev + mockResult[i]);
-        i++;
-        if (i === mockResult.length - 1) {
-          clearInterval(interval);
-          setIsGenerating(false);
-        }
-      }, 20);
-      return;
-    }
-
-    const openai = client as OpenAI;
+    const openai = client;
     const prompt = generateOptimizeBulletsPrompt(
       exp.description, 
       resumeData.personalInfo.jobTitle, 
@@ -463,22 +415,7 @@ const Home: React.FC = () => {
 
     setIsGenerating(true);
     
-    if (client === 'MOCK') {
-      const mockResult = `Languages: TypeScript, Python, Go, Rust\nFrameworks: React, Next.js, Node.js\nCloud & Tools: AWS, Docker, Kubernetes, CI/CD`;
-      let i = 0;
-      setResumeData(prev => ({...prev, skills: ''}));
-      const interval = setInterval(() => {
-        setResumeData(prev => ({...prev, skills: prev.skills + mockResult[i]}));
-        i++;
-        if (i === mockResult.length - 1) {
-          clearInterval(interval);
-          setIsGenerating(false);
-        }
-      }, 20);
-      return;
-    }
-
-    const openai = client as OpenAI;
+    const openai = client;
     const prompt = generateTailorSkillsPrompt(
       resumeData.skills, 
       resumeData.personalInfo.jobTitle, 
@@ -515,22 +452,7 @@ const Home: React.FC = () => {
     const client = getOpenAIClient();
     if (!client) return;
     
-    if (client === 'MOCK') {
-      const mockResult = "Results-driven professional with a proven track record of delivering scalable solutions and driving key business metrics. Adept at cross-functional collaboration, strategic planning, and optimizing workflows to exceed organizational goals.";
-      let i = 0;
-      setResumeData(prev => ({ ...prev, personalInfo: { ...prev.personalInfo, summary: '' } }));
-      const interval = setInterval(() => {
-        setResumeData(prev => ({ 
-          ...prev, 
-          personalInfo: { ...prev.personalInfo, summary: prev.personalInfo.summary + mockResult.charAt(i) } 
-        }));
-        i++;
-        if (i >= mockResult.length) clearInterval(interval);
-      }, 20);
-      return;
-    }
-
-    const openai = client as OpenAI;
+    const openai = client;
     const prompt = generateOptimizeSummaryPrompt(
       resumeData.personalInfo.summary, 
       resumeData.personalInfo.jobTitle, 
@@ -711,18 +633,20 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="tool-wrapper" style={{ height: 'calc(100vh - 73px)', overflowY: 'auto' }}>
+    <>
+      <SEO 
+        title="Free AI Resume Optimizer | Career Insight Labs"
+        description="Upload your resume, enter a target job, and let our AI optimize your resume to beat the ATS and get you hired."
+        url="https://careerinsightlabs.com/app"
+      />
+      <div className="tool-wrapper" style={{ height: 'calc(100vh - 73px)', overflowY: 'auto' }}>
       <div className="tool-container" style={{ height: 'calc(100vh - 73px)', flexShrink: 0 }}>
       {/* LEFT SIDEBAR: EDITOR */}
       <aside className="tool-sidebar" style={{ width: '500px', flexShrink: 0, position: 'relative' }}>
         <div className="settings-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '24px', letterSpacing: '-0.5px', margin: 0 }}>Resume Optimizer</h2>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            {!keys[activeProvider]?.apiKey && (
-              <div style={{ fontSize: '12px', fontWeight: 600, padding: '4px 10px', borderRadius: '12px', backgroundColor: freeCredits > 0 ? '#dcfce7' : '#fee2e2', color: freeCredits > 0 ? '#166534' : '#991b1b', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                🎁 {freeCredits} Free Credits
-              </div>
-            )}
+
             <button 
               onClick={() => setIsSettingsOpen(true)}
               style={{ 
@@ -1314,8 +1238,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
-export default Home;
+export default AppTool;

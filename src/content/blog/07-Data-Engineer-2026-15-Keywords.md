@@ -1,6 +1,6 @@
 # Data Engineer Resume Guide: The 15 High-Paying Keywords You Must Use in 2026
 
-> *Author: Senior Tech Recruiter @ Career Insight Labs | Last Updated: June 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>May 14, 2026*
 
 ---
 
@@ -403,7 +403,7 @@ Honestly, ensuring your Data Engineer resume covers all 15 of these 2026 high-pa
 
 Many candidates have actually used Iceberg, Snowpark, or Vector DB in real work — but when writing the resume, they don't recognize these as high-paying keywords and either gloss over them or omit them entirely.
 
-That's the role of our **Career Insight Labs Data Engineer-specific analysis model**:
+That's the role of our **AI-Resume-Builder Data Engineer-specific analysis model**:
 
 - Auto-scans your input work experience
 - Cross-references the 2026 North American Top 100 Data Engineer JD keyword library
@@ -411,7 +411,7 @@ That's the role of our **Career Insight Labs Data Engineer-specific analysis mod
 - Guides you through a Q&A to recall and add them ("Have you used dbt? Have you done streaming?")
 - Auto-generates bullets following the "wrong → right" standardized template
 
-👉 [Try the Career Insight Labs Data Engineer model for free — auto-detect your missing high-paying keywords](#)
+👉 [Try the AI-Resume-Builder Data Engineer model for free — auto-detect your missing high-paying keywords](#)
 
 ---
 
@@ -434,25 +434,25 @@ That's the role of our **Career Insight Labs Data Engineer-specific analysis mod
   "@type": "Article",
   "headline": "Data Engineer Resume Guide: The 15 High-Paying Keywords You Must Use in 2026",
   "description": "The 15 highest-paying technical keywords for North American Senior Data Engineers in 2026 — from dbt, Snowpark, and Iceberg to RAG Pipelines and Vector DB — each with wrong-vs-right rewrite examples and a complete Before/After case.",
-  "image": "https://careerinsightlabs.com/og/data-engineer-2026-keywords.png",
+  "image": "https://ai-resume-builder.com/og/data-engineer-2026-keywords.png",
   "author": {
     "@type": "Person",
     "name": "Senior Tech Recruiter",
-    "url": "https://careerinsightlabs.com/about"
+    "url": "https://ai-resume-builder.com/about"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Career Insight Labs",
+    "name": "AI-Resume-Builder",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://careerinsightlabs.com/logo.png"
+      "url": "https://ai-resume-builder.com/logo.png"
     }
   },
   "datePublished": "2026-06-06",
   "dateModified": "2026-06-06",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://careerinsightlabs.com/blog/data-engineer-2026-15-keywords"
+    "@id": "https://ai-resume-builder.com/blog/data-engineer-2026-15-keywords"
   },
   "keywords": "Data Engineer resume 2026, dbt Snowflake resume, Apache Iceberg resume, RAG pipeline Data Engineer, Vector database, Modern Data Stack keywords, Senior Data Engineer salary"
 }

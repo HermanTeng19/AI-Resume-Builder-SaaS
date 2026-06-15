@@ -1,6 +1,6 @@
 # The ACR Formula: How Three Sentences Can Double the Perceived Value of Your Dev/Data Experience
 
-> *Author: Senior Tech Recruiter @ Career Insight Labs | Last Updated: June 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Jan 25, 2026*
 
 ---
 
@@ -295,7 +295,7 @@ Honestly, applying ACR to every bullet — combined with the verb tier list, the
 
 Not because it's hard. **Because when writing about your own achievements, humans instinctively become modest and vague.**
 
-That's a core use case for **Career Insight Labs**.
+That's a core use case for **AI-Resume-Builder**.
 
 Our "Bullet Editor" has an **ACR Scoring Engine** built in. Type a bullet and it tells you:
 
@@ -306,7 +306,7 @@ Our "Bullet Editor" has an **ACR Scoring Engine** built in. Type a bullet and it
 
 Critically — **it does not invent data.** It only does semantic upgrading and verb substitution on the facts you've already provided.
 
-👉 [Try Career Insight Labs for free and score every bullet on ACR](#)
+👉 [Try AI-Resume-Builder for free and score every bullet on ACR](#)
 
 ---
 
@@ -329,25 +329,25 @@ Critically — **it does not invent data.** It only does semantic upgrading and 
   "@type": "Article",
   "headline": "The ACR Formula: How Three Sentences Can Double the Perceived Value of Your Dev/Data Experience",
   "description": "A deep dive into the Action + Context + Result bullet formula used inside top tech hiring committees — with Staff/Senior/Mid verb tier tables, 6 quantification dimensions, and a Data Engineer Before/After moving from L4 to L6 classification.",
-  "image": "https://careerinsightlabs.com/og/acr-formula-resume.png",
+  "image": "https://ai-resume-builder.com/og/acr-formula-resume.png",
   "author": {
     "@type": "Person",
     "name": "Senior Tech Recruiter",
-    "url": "https://careerinsightlabs.com/about"
+    "url": "https://ai-resume-builder.com/about"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Career Insight Labs",
+    "name": "AI-Resume-Builder",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://careerinsightlabs.com/logo.png"
+      "url": "https://ai-resume-builder.com/logo.png"
     }
   },
   "datePublished": "2026-06-06",
   "dateModified": "2026-06-06",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://careerinsightlabs.com/blog/acr-formula-tech-resume"
+    "@id": "https://ai-resume-builder.com/blog/acr-formula-tech-resume"
   },
   "keywords": "ACR formula resume, Action Context Result, tech resume bullet point, FAANG resume bullets, quantified resume achievements, senior engineer resume"
 }

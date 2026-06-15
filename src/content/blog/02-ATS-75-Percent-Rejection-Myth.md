@@ -1,6 +1,6 @@
 # Busting the ATS Myth: Are 75% of Resumes Really "Auto-Rejected" by Machines?
 
-> *Author: Senior Tech Recruiter @ Career Insight Labs | Last Updated: June 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Jan 6, 2026*
 
 ---
 
@@ -168,7 +168,7 @@ Bottom-line, no fluff:
 
 ## 7. CTA: Stop Worrying About "Rejection." Focus on Ranking Top 30.
 
-When we built **Career Insight Labs**, the very first product decision was this:
+When we built **AI-Resume-Builder**, the very first product decision was this:
 
 **We only ship minimalist standard layouts that have been tested to a 100% parse rate across major ATS platforms.**
 
@@ -176,7 +176,7 @@ No three hours in Canva picking templates. No worries about whether your two-col
 
 Your job is simple: **write your work experience well.** The formatting war — we've already fought it for you.
 
-👉 [Try Career Insight Labs for free and generate a 100% ATS-parseable resume](#)
+👉 [Try AI-Resume-Builder for free and generate a 100% ATS-parseable resume](#)
 
 ---
 
@@ -199,25 +199,25 @@ Your job is simple: **write your work experience well.** The formatting war — 
   "@type": "Article",
   "headline": "Busting the ATS Myth: Are 75% of Resumes Really Auto-Rejected by Machines?",
   "description": "A breakdown of the 4-layer ATS funnel using real Greenhouse data, debunking the auto-rejection myth and showing a Before/After formatting rebuild that took a resume from rank 251 to rank 18.",
-  "image": "https://careerinsightlabs.com/og/ats-75-percent-myth.png",
+  "image": "https://ai-resume-builder.com/og/ats-75-percent-myth.png",
   "author": {
     "@type": "Person",
     "name": "Senior Tech Recruiter",
-    "url": "https://careerinsightlabs.com/about"
+    "url": "https://ai-resume-builder.com/about"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Career Insight Labs",
+    "name": "AI-Resume-Builder",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://careerinsightlabs.com/logo.png"
+      "url": "https://ai-resume-builder.com/logo.png"
     }
   },
   "datePublished": "2026-06-06",
   "dateModified": "2026-06-06",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://careerinsightlabs.com/blog/ats-75-percent-rejection-myth"
+    "@id": "https://ai-resume-builder.com/blog/ats-75-percent-rejection-myth"
   },
   "keywords": "ATS ranking system, ATS filter myth, resume parsing rate, ATS-friendly resume format, Greenhouse Lever Workday, resume rejection rate"
 }

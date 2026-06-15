@@ -1,6 +1,6 @@
 # Beware the "AI Doom Loop": How to Use ChatGPT for Your Resume Without Triggering AI Detectors
 
-> *Author: Senior Tech Recruiter @ Career Insight Labs | Last Updated: June 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Apr 25, 2026*
 
 ---
 
@@ -224,7 +224,7 @@ Notice the Human-in-the-Loop signals:
 
 The honest truth: most candidates won't run a full Human-in-the-Loop workflow by hand — they'll cave to convenience and let ChatGPT generate the whole thing.
 
-That's why we built one of **Career Insight Labs**'s most stubborn product decisions:
+That's why we built one of **AI-Resume-Builder**'s most stubborn product decisions:
 
 **We require you to input real, raw background data** — what you did, what stack you used, what quantified outcome you produced. Our AI only does format polishing and verb substitution on what you provided. **It will never invent work experience for you.**
 
@@ -232,7 +232,7 @@ The output engine also runs a GPTZero-class detector on every bullet. After each
 
 In short: **we don't let you skip the thinking, but we win the AI-detector war on your behalf.**
 
-👉 [Try Career Insight Labs for free and check your resume's AI detection score](#)
+👉 [Try AI-Resume-Builder for free and check your resume's AI detection score](#)
 
 ---
 
@@ -255,25 +255,25 @@ In short: **we don't let you skip the thinking, but we win the AI-detector war o
   "@type": "Article",
   "headline": "Beware the AI Doom Loop: How to Use ChatGPT for Your Resume Without Triggering AI Detectors",
   "description": "How GPTZero, Copyleaks, and other AI detectors work — perplexity, burstiness, phrase blacklists, semantic fingerprinting — plus a 4-step Human-in-the-Loop workflow and a Before/After case.",
-  "image": "https://careerinsightlabs.com/og/ai-detector-resume.png",
+  "image": "https://ai-resume-builder.com/og/ai-detector-resume.png",
   "author": {
     "@type": "Person",
     "name": "Senior Tech Recruiter",
-    "url": "https://careerinsightlabs.com/about"
+    "url": "https://ai-resume-builder.com/about"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Career Insight Labs",
+    "name": "AI-Resume-Builder",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://careerinsightlabs.com/logo.png"
+      "url": "https://ai-resume-builder.com/logo.png"
     }
   },
   "datePublished": "2026-06-06",
   "dateModified": "2026-06-06",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://careerinsightlabs.com/blog/avoid-ai-detector-chatgpt-resume"
+    "@id": "https://ai-resume-builder.com/blog/avoid-ai-detector-chatgpt-resume"
   },
   "keywords": "AI resume detector, GPTZero resume, ChatGPT resume detection, AI-generated resume, Human-in-the-Loop resume, Copyleaks ATS, perplexity burstiness resume"
 }

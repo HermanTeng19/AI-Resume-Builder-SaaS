@@ -10,13 +10,13 @@ A premium, 100% client-side ATS-friendly resume builder and AI optimizer. Built 
 - **ATS-Optimized Elite Templates**: Ships with 3 premium, recruiter-approved templates (*Silicon Valley*, *Ivy League*, and *Modern Minimalist*) designed specifically to parse perfectly in Applicant Tracking Systems.
 - **AI Resume Optimizer**: Automatically restructures experience bullets into the STAR format (Situation, Task, Action, Result) and semantically injects keywords from your target Job Description.
 - **Pixel-Perfect PDF Export**: Features an advanced CSS `@media print` engine with a bulletproof `Table Thead/Tfoot` wrapper pattern to guarantee perfect multi-page pagination and margins without browser-injected metadata.
-- **SEO-Optimized Blog System**: Includes a built-in markdown-based blogging system with multimedia embedding to drive long-tail organic traffic.
+- **SEO-Optimized Blog System & Dynamic Meta Tags**: Includes a built-in markdown-based blogging system with multimedia embedding, auto-generated sitemaps, `robots.txt`, and dynamic React Helmet Async `og:` / `twitter:` meta tags to drive long-tail organic traffic.
 
 ## 🛠 Tech Stack
 
 - **Framework**: React 19 + TypeScript + Vite
 - **Styling**: Vanilla CSS (Custom Design System, Premium Minimalist Aesthetic)
-- **Routing**: React Router DOM
+- **Routing & SEO**: React Router DOM, React Helmet Async
 - **AI Integration**: Official OpenAI Node SDK (`dangerouslyAllowBrowser: true` for BYOK)
 - **Document Processing**: `pdfjs-dist` (PDF), `mammoth` (DOCX)
 - **Export**: Native Browser Print (PDF), `docx` & `file-saver` (Word Export)
@@ -60,6 +60,7 @@ A premium, 100% client-side ATS-friendly resume builder and AI optimizer. Built 
  
  - [ ] Connect repository to Vercel/Netlify for public edge hosting.
  - [x] **Serverless Backend (Contact Form)**: Implement Vercel Serverless Functions (`/api/contact.ts`) to securely process form submissions via the Resend API without exposing credentials on the client.
+ - [x] **Comprehensive SEO**: Added React Helmet meta tags, `robots.txt`, and auto-sitemap generation for the blog.
  - [ ] **Backend Decision (Free Tries)**: Finalize whether the 3 "Free Tries" remain a local mock or transition to a real serverless backend to allow actual AI calls for free users.
  - [ ] Polish the mobile responsiveness of the App Tool editor layout.
  - [ ] Introduce a real-time ATS keyword matching score.

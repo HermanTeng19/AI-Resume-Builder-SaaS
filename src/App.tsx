@@ -25,6 +25,7 @@ function App() {
         <Route path="privacy-policy" element={<TrustPage title="Privacy Policy" />} />
         <Route path="terms-of-service" element={<TrustPage title="Terms of Service" />} />
         <Route path="about" element={<TrustPage title="About Us" />} />
+        <Route path="disclaimer" element={<TrustPage title="Disclaimer" />} />
         <Route path="contact" element={<Contact />} />
       </Route>
     </Routes>

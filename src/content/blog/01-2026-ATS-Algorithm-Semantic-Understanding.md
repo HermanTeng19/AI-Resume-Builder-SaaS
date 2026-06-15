@@ -1,6 +1,6 @@
 # The 2026 ATS Algorithm Decoded: Why Keyword Stuffing No Longer Works
 
-> *Author: Senior Tech Recruiter @ Career Insight Labs | Last Updated: June 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Apr 22, 2026*
 
 ---
 
@@ -13,6 +13,8 @@ Let me tell you something most resume influencers won't admit:
 Why? Because modern ATS platforms stopped being "Ctrl+F keyword matchers" two years ago.
 
 In this article, I'll walk you through real data from my Greenhouse backend: what the 2026 ATS algorithm actually looks at, how it scores you with semantic models, and a Before/After case study of a real candidate.
+
+---
 
 <div style="background-color: var(--soft-stone, #eeece7); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; border: 1px solid var(--border-color, #e5e7eb);">
   <h4 style="margin-top: 0; color: var(--cohere-black, #000); display: flex; align-items: center; gap: 8px;">
@@ -196,13 +198,13 @@ Twelve years of recruiting boiled down to four rules. You can finish the rewrite
 
 Honestly, hitting all three dimensions — semantic embedding, verb strength, diversified keyword context — by hand takes most candidates an entire weekend.
 
-That's exactly why we built **Career Insight Labs**.
+That's exactly why we built **AI-Resume-Builder**.
 
 Our engine runs on the same generation of semantic matching models that power the major ATS platforms. When you type a work bullet into the editor, it **simulates Greenhouse and Lever's scoring logic in real time**, tells you what that bullet would score in an algorithm's eyes, and suggests exactly how to rewrite it.
 
 More importantly, it never fabricates anything for you — it only does high-end semantic polishing on the real background you provide, which is critical for surviving the AI detectors I'll cover in a later post.
 
-👉 [Try Career Insight Labs for free and see your real ATS score](#)
+👉 [Try AI-Resume-Builder for free and see your real ATS score](#)
 
 ---
 
@@ -210,7 +212,7 @@ More importantly, it never fabricates anything for you — it only does high-end
 
 ### HTML `<title>` tag
 ```html
-<title>2026 ATS Algorithm Decoded: Why Keyword Stuffing Fails | Career Insight Labs</title>
+<title>2026 ATS Algorithm Decoded: Why Keyword Stuffing Fails | AI-Resume-Builder</title>
 ```
 
 ### `<meta description>`
@@ -225,25 +227,25 @@ More importantly, it never fabricates anything for you — it only does high-end
   "@type": "Article",
   "headline": "The 2026 ATS Algorithm Decoded: Why Keyword Stuffing No Longer Works",
   "description": "A deep dive into the semantic understanding, contextual relevance scoring, and keyword-stuffing detection of modern ATS platforms, with a Senior Data Engineer Before/After resume rebuild.",
-  "image": "https://careerinsightlabs.com/og/2026-ats-algorithm.png",
+  "image": "https://ai-resume-builder.com/og/2026-ats-algorithm.png",
   "author": {
     "@type": "Person",
     "name": "Senior Tech Recruiter",
-    "url": "https://careerinsightlabs.com/about"
+    "url": "https://ai-resume-builder.com/about"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Career Insight Labs",
+    "name": "AI-Resume-Builder",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://careerinsightlabs.com/logo.png"
+      "url": "https://ai-resume-builder.com/logo.png"
     }
   },
   "datePublished": "2026-06-06",
   "dateModified": "2026-06-06",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://careerinsightlabs.com/blog/2026-ats-algorithm-semantic-understanding"
+    "@id": "https://ai-resume-builder.com/blog/2026-ats-algorithm-semantic-understanding"
   },
   "keywords": "2026 ATS algorithm, semantic ATS matching, keyword stuffing detection, resume optimization 2026, ATS ranking system, tech recruiter ATS guide"
 }

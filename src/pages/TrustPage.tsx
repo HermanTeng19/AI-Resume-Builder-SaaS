@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 interface TrustPageProps {
   title: string;
@@ -88,9 +89,34 @@ const AboutUsContent = () => (
   </div>
 );
 
+const DisclaimerContent = () => (
+  <div className="trust-document">
+    <h2>1. General Information</h2>
+    <p>The information, tools, and services provided by Career Insight Labs, including but not limited to our AI Resume Builder and Career Guides, are intended for educational and informational purposes only. We provide insights based on industry experience, but hiring practices vary significantly across companies and industries.</p>
+
+    <h2>2. No Guarantee of Employment</h2>
+    <p>Using our AI tools or following our resume optimization strategies <strong>does not guarantee</strong> that you will secure an interview, a job offer, or any specific career outcome. The final hiring decision rests entirely with the employers and human recruiters reviewing your application.</p>
+
+    <h2>3. Accuracy of ATS Strategies</h2>
+    <p>Our insights on Applicant Tracking Systems (ATS) and hiring algorithms are based on extensive research and the past experiences of our team. However, ATS algorithms, filtering logic, and platform capabilities are proprietary and constantly evolving. We cannot guarantee that our keyword optimization strategies will accurately bypass every iteration of every ATS on the market.</p>
+
+    <h2>4. User Responsibility</h2>
+    <p>You are solely responsible for the accuracy and truthfulness of the content in your resume. The AI-generated suggestions provided by our tool are exactly that—suggestions. It is your responsibility to review, edit, and verify that any generated content truthfully reflects your actual skills, experience, and qualifications before submitting it to an employer.</p>
+
+    <h2>5. Third-Party Integrations</h2>
+    <p>Our tool relies on the OpenAI API to generate suggestions. We do not control OpenAI's uptime, availability, or the underlying behavior of their models. Additionally, we are not responsible for how third-party platforms (such as LinkedIn or job boards) interpret or parse the resume files exported from our tool.</p>
+  </div>
+);
+
 const TrustPage: React.FC<TrustPageProps> = ({ title }) => {
   return (
-    <div className="page-container" style={{ maxWidth: '800px', margin: '4rem auto', backgroundColor: 'white', padding: '4rem 5rem', borderRadius: '20px', boxShadow: '0 20px 40px -15px rgba(0,0,0,0.05)', border: '1px solid var(--border-color)', animation: 'fadeInUp 0.5s ease-out' }}>
+    <>
+      <SEO 
+        title={`${title} | Career Insight Labs`}
+        description={`Read our ${title} to learn more about our commitment to your privacy and success.`}
+        url={`https://careerinsightlabs.com/${title.toLowerCase().replace(/ /g, '-')}`}
+      />
+      <div className="page-container" style={{ maxWidth: '800px', margin: '4rem auto', backgroundColor: 'white', padding: '4rem 5rem', borderRadius: '20px', boxShadow: '0 20px 40px -15px rgba(0,0,0,0.05)', border: '1px solid var(--border-color)', animation: 'fadeInUp 0.5s ease-out' }}>
       <Link to="/" className="back-link" style={{ marginBottom: '2rem', display: 'inline-flex', alignItems: 'center', color: 'var(--text-muted)', textDecoration: 'none', fontWeight: 600 }}>
         <ArrowLeft size={16} className="back-icon" style={{ marginRight: '0.5rem' }} /> Back to Home
       </Link>
@@ -102,9 +128,11 @@ const TrustPage: React.FC<TrustPageProps> = ({ title }) => {
         {title === 'Privacy Policy' && <PrivacyPolicyContent />}
         {title === 'Terms of Service' && <TermsOfServiceContent />}
         {title === 'About Us' && <AboutUsContent />}
+        {title === 'Disclaimer' && <DisclaimerContent />}
         {title === 'Contact Us' && <p>Contact Us content coming soon.</p>}
       </div>
     </div>
+    </>
   );
 };
 

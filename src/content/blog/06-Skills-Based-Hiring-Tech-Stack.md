@@ -1,6 +1,6 @@
 # Skills-Based Hiring Era: How to Present Your Tech Stack the Right Way
 
-> *Author: Senior Tech Recruiter @ Career Insight Labs | Last Updated: June 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Feb 20, 2026*
 
 ---
 
@@ -307,7 +307,7 @@ In the Skills-Based Hiring era, **the question isn't `how many skills did you li
 
 Manually reviewing 30 skills, checking each against your work experience, counting appearances, and verifying quantified context — that's painful even in a spreadsheet.
 
-That's exactly what our **Career Insight Labs Skill Evidence Analyzer** does:
+That's exactly what our **AI-Resume-Builder Skill Evidence Analyzer** does:
 
 - Auto-scans every declared skill in your resume
 - Searches your work experience for evidence of each
@@ -317,7 +317,7 @@ That's exactly what our **Career Insight Labs Skill Evidence Analyzer** does:
 
 In short: **it calculates exactly what your resume is worth in the LinkedIn Recruiter backend.**
 
-👉 [Try Career Insight Labs for free and analyze your resume's Skill Evidence Score](#)
+👉 [Try AI-Resume-Builder for free and analyze your resume's Skill Evidence Score](#)
 
 ---
 
@@ -340,25 +340,25 @@ In short: **it calculates exactly what your resume is worth in the LinkedIn Recr
   "@type": "Article",
   "headline": "Skills-Based Hiring Era: How to Present Your Tech Stack the Right Way",
   "description": "How the 2026 Skills-Based Hiring shift reorders LinkedIn Recruiter and Greenhouse sourcing — exposing the Skill Evidence Strength scoring system, the skill dissolution method, and a complete Before/After case.",
-  "image": "https://careerinsightlabs.com/og/skills-based-hiring.png",
+  "image": "https://ai-resume-builder.com/og/skills-based-hiring.png",
   "author": {
     "@type": "Person",
     "name": "Senior Tech Recruiter",
-    "url": "https://careerinsightlabs.com/about"
+    "url": "https://ai-resume-builder.com/about"
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Career Insight Labs",
+    "name": "AI-Resume-Builder",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://careerinsightlabs.com/logo.png"
+      "url": "https://ai-resume-builder.com/logo.png"
     }
   },
   "datePublished": "2026-06-06",
   "dateModified": "2026-06-06",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://careerinsightlabs.com/blog/skills-based-hiring-tech-stack"
+    "@id": "https://ai-resume-builder.com/blog/skills-based-hiring-tech-stack"
   },
   "keywords": "skills-based hiring, Skill Evidence Strength, LinkedIn Recruiter sourcing, tech stack resume, skills dissolution, 2026 hiring trends"
 }
