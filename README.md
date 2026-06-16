@@ -1,5 +1,7 @@
 # 🚀 Career Insight Labs - AI Resume Optimizer
 
+**Live at:** [https://careerinsightlabs.com](https://careerinsightlabs.com)
+
 A premium, 100% client-side ATS-friendly resume builder and AI optimizer. Built with React 19, TypeScript, and Vite, this tool allows job seekers to parse their existing resumes, inject target Job Description (JD) keywords, and re-write their experience bullets using flagship LLMs—all without sacrificing their privacy to a backend database.
 
 ## ✨ Key Features
@@ -32,8 +34,8 @@ A premium, 100% client-side ATS-friendly resume builder and AI optimizer. Built 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/ai-resume-builder-saas.git
-   cd ai-resume-builder-saas
+   git clone https://github.com/HermanTeng19/AI-Resume-Builder-SaaS.git
+   cd AI-Resume-Builder-SaaS
    ```
 
 2. Install dependencies:
@@ -58,16 +60,16 @@ A premium, 100% client-side ATS-friendly resume builder and AI optimizer. Built 
 
 ## 🚧 Roadmap
  
- - [ ] Connect repository to Vercel/Netlify for public edge hosting.
+ - [x] **Production Deployment**: Connected to Vercel for public edge hosting and mapped custom domain `careerinsightlabs.com`.
  - [x] **Serverless Backend (Contact Form)**: Implement Vercel Serverless Functions (`/api/contact.ts`) to securely process form submissions via the Resend API without exposing credentials on the client.
- - [x] **Comprehensive SEO**: Added React Helmet meta tags, `robots.txt`, and auto-sitemap generation for the blog.
+ - [x] **Comprehensive SEO**: Added React Helmet meta tags, `robots.txt`, auto-sitemap generation for the blog, and submitted to Google Search Console.
+ - [x] **Mobile Optimization**: Polished the responsiveness of the App Tool editor layout and global navigation (Hamburger menu).
  - [ ] **Backend Decision (Free Tries)**: Finalize whether the 3 "Free Tries" remain a local mock or transition to a real serverless backend to allow actual AI calls for free users.
- - [ ] Polish the mobile responsiveness of the App Tool editor layout.
  - [ ] Introduce a real-time ATS keyword matching score.
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/ai-resume-builder-saas/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/HermanTeng19/AI-Resume-Builder-SaaS/issues).
 
 ## 📄 License
 
