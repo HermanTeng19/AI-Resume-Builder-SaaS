@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
-import { ArrowLeft, Clock, ArrowUp } from 'lucide-react';
+import { ArrowLeft, Clock } from 'lucide-react';
 import { imageMap } from '../content/imageMap';
 import { SEO } from '../components/SEO';
 
@@ -13,7 +13,6 @@ const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const [content, setContent] = useState('');
   const [readingTime, setReadingTime] = useState(1);
-  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0); // Always start reading from the top
@@ -42,24 +41,6 @@ const BlogPost: React.FC = () => {
       setContent('# Article not found\n\nSorry, the article you are looking for does not exist.');
     }
   }, [slug]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Show button when scrolled down 400px
-      if (window.scrollY > 400) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   const match = content.match(/^#\s+(.*)/m);
   const title = match ? match[1] : (slug ? slug.replace(/-/g, ' ') : 'Blog Post');
@@ -94,17 +75,6 @@ const BlogPost: React.FC = () => {
           </ReactMarkdown>
         </article>
       </div>
-
-      {/* Floating Back to Top Button */}
-      {showScrollTop && (
-        <button 
-          onClick={scrollToTop} 
-          className="scroll-to-top-btn"
-          aria-label="Back to top"
-        >
-          <ArrowUp size={24} />
-        </button>
-      )}
     </div>
   );
 };

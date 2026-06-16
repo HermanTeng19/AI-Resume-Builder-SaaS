@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowUp } from 'lucide-react';
 
 const MainLayout: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const isAppTool = location.pathname === '/app';
 
   const scrollToTop = () => {
@@ -19,6 +20,19 @@ const MainLayout: React.FC = () => {
     }
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -79,6 +93,17 @@ const MainLayout: React.FC = () => {
             <Link to="/contact" onClick={scrollToTop}>Contact</Link>
           </div>
         </footer>
+      )}
+
+      {/* Floating Back to Top Button (Global) */}
+      {showScrollTop && (
+        <button 
+          onClick={scrollToTop} 
+          className="scroll-to-top-btn"
+          aria-label="Back to top"
+        >
+          <ArrowUp size={24} />
+        </button>
       )}
     </div>
   );
