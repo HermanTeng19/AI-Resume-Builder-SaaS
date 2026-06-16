@@ -116,7 +116,7 @@ const TrustPage: React.FC<TrustPageProps> = ({ title }) => {
         description={`Read our ${title} to learn more about our commitment to your privacy and success.`}
         url={`https://careerinsightlabs.com/${title.toLowerCase().replace(/ /g, '-')}`}
       />
-      <div className="page-container" style={{ maxWidth: '800px', margin: '4rem auto', backgroundColor: 'white', padding: '4rem 5rem', borderRadius: '20px', boxShadow: '0 20px 40px -15px rgba(0,0,0,0.05)', border: '1px solid var(--border-color)', animation: 'fadeInUp 0.5s ease-out' }}>
+      <div className="page-container trust-page-container" style={{ maxWidth: '800px', margin: '4rem auto', backgroundColor: 'white', borderRadius: '20px', boxShadow: '0 20px 40px -15px rgba(0,0,0,0.05)', border: '1px solid var(--border-color)', animation: 'fadeInUp 0.5s ease-out' }}>
       <Link to="/" className="back-link" style={{ marginBottom: '2rem', display: 'inline-flex', alignItems: 'center', color: 'var(--text-muted)', textDecoration: 'none', fontWeight: 600 }}>
         <ArrowLeft size={16} className="back-icon" style={{ marginRight: '0.5rem' }} /> Back to Home
       </Link>

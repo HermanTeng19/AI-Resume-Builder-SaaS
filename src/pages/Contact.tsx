@@ -123,7 +123,7 @@ const Contact: React.FC = () => {
                   </div>
                 )}
                 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+                <div className="contact-form-row">
                   <div className="form-group" style={{ marginBottom: 0 }}>
                     <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', fontSize: '0.9rem', color: '#334155' }}>First Name</label>
                     <input type="text" name="name" required placeholder="John" style={{ width: '100%', padding: '0.75rem', border: '1px solid #cbd5e1', borderRadius: '8px', fontSize: '1rem' }} />
