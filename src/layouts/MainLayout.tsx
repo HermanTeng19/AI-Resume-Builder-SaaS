@@ -69,6 +69,9 @@ const MainLayout: React.FC = () => {
           <a href="/#insights" onClick={(e) => scrollToSection(e, 'insights')}>Insights</a>
           <Link to="/blog" onClick={scrollToTop}>Career Guides</Link>
           <Link to="/about" onClick={scrollToTop}>About Us</Link>
+          <Link to="/interview-prep" className="nav-cta" style={{ background: 'transparent', border: '1px solid var(--primary-color)', color: 'var(--primary-color)' }} onClick={scrollToTop}>
+            Interview Prep
+          </Link>
           {!isAppTool && (
             <Link to="/app" className="nav-cta" onClick={scrollToTop}>
               Free Resume Optimizer

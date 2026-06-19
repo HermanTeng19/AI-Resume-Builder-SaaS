@@ -6,6 +6,7 @@ import BlogList from './pages/BlogList';
 import BlogPost from './pages/BlogPost';
 import TrustPage from './pages/TrustPage';
 import Contact from './pages/Contact';
+import InterviewPrep from './pages/InterviewPrep';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         
         {/* The actual SaaS Tool */}
         <Route path="app" element={<AppTool />} />
+        <Route path="interview-prep" element={<InterviewPrep />} />
         
         {/* Blog Routes */}
         <Route path="blog" element={<BlogList />} />
