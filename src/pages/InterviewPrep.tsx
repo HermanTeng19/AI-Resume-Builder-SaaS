@@ -1,7 +1,7 @@
 // In src/pages/InterviewPrep.tsx
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { SEO } from '../components/SEO';
-import { Upload, FileText, CheckCircle2 } from 'lucide-react';
+import { Upload, X } from 'lucide-react';
 
 const InterviewPrep: React.FC = () => {
   const [step, setStep] = useState<1 | 2 | 3>(1);
@@ -15,6 +15,7 @@ const InterviewPrep: React.FC = () => {
     technical: false
   });
   const [fileName, setFileName] = useState('');
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -40,9 +41,12 @@ const InterviewPrep: React.FC = () => {
         }
         setResumeText(text);
       }
+      e.target.value = '';
     } catch (error) {
       console.error("Error parsing file:", error);
       alert("Failed to parse file. Please paste text directly.");
+      setFileName('');
+      e.target.value = '';
     }
   };
 
@@ -68,27 +72,44 @@ const InterviewPrep: React.FC = () => {
           <h1 style={{ textAlign: 'center', marginBottom: '2rem', color: '#1e293b' }}>Generate Your Interview Survival Guide</h1>
           
           <div className="form-group" style={{ marginBottom: '1.5rem' }}>
-            <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.5rem' }}>1. Upload Resume (PDF/Word)</label>
+            <label htmlFor="resume-text" style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.5rem' }}>1. Upload Resume (PDF/Word)</label>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
               <label className="btn-cohere" style={{ cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                 <Upload size={18} /> Upload File
-                <input type="file" accept=".pdf,.docx" style={{ display: 'none' }} onChange={handleFileUpload} />
+                <input ref={fileInputRef} type="file" accept=".pdf,.docx" style={{ display: 'none' }} onChange={handleFileUpload} />
               </label>
-              <span style={{ color: '#64748b' }}>{fileName || "No file selected"}</span>
+              {fileName ? (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <span style={{ color: '#64748b' }}>{fileName}</span>
+                  <button 
+                    onClick={() => {
+                      setFileName('');
+                      setResumeText('');
+                      if (fileInputRef.current) fileInputRef.current.value = '';
+                    }}
+                    style={{ background: 'none', border: 'none', color: '#ef4444', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: '0.2rem' }}
+                    title="Remove file"
+                  >
+                    <X size={16} />
+                  </button>
+                </div>
+              ) : (
+                <span style={{ color: '#64748b' }}>No file selected</span>
+              )}
             </div>
-            {!fileName && (
-              <textarea 
-                placeholder="Or paste your resume text here..." 
-                value={resumeText} 
-                onChange={(e) => setResumeText(e.target.value)}
-                style={{ width: '100%', minHeight: '100px', marginTop: '1rem', padding: '1rem', border: '1px solid #cbd5e1', borderRadius: '8px' }}
-              />
-            )}
+            <textarea 
+              id="resume-text"
+              placeholder="Or paste your resume text here..." 
+              value={resumeText} 
+              onChange={(e) => setResumeText(e.target.value)}
+              style={{ width: '100%', minHeight: '100px', marginTop: '1rem', padding: '1rem', border: '1px solid #cbd5e1', borderRadius: '8px' }}
+            />
           </div>
 
           <div className="form-group" style={{ marginBottom: '1.5rem' }}>
-            <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.5rem' }}>2. Paste Job Description (JD)</label>
+            <label htmlFor="jd-text" style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.5rem' }}>2. Paste Job Description (JD)</label>
             <textarea 
+              id="jd-text"
               placeholder="Paste the full job description here..." 
               value={jdText} 
               onChange={(e) => setJdText(e.target.value)}
@@ -97,9 +118,10 @@ const InterviewPrep: React.FC = () => {
           </div>
 
           <div className="form-group" style={{ marginBottom: '1.5rem' }}>
-            <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.5rem' }}>3. Confusing JD Points (Optional)</label>
+            <label htmlFor="confused-points" style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.5rem' }}>3. Confusing JD Points (Optional)</label>
             <p style={{ fontSize: '0.9rem', color: '#64748b', marginBottom: '0.5rem' }}>Not sure what "Kubernetes orchestration" means in the JD? Paste those confusing points here and our AI expert will explain them.</p>
             <textarea 
+              id="confused-points"
               placeholder="e.g., Cross-functional agile matrix, B2B SaaS GTM strategies..." 
               value={confusedPoints} 
               onChange={(e) => setConfusedPoints(e.target.value)}
