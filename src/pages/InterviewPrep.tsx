@@ -109,9 +109,10 @@ ${jdText}
       const content = response.choices[0]?.message?.content || 'No content generated.';
       setGeneratedGuide(content);
       setStep(3);
-    } catch (error: any) {
+    } catch (error) {
       console.error("AI Generation Error:", error);
-      alert(`Generation failed: ${error.message}`);
+      const errorMessage = error instanceof Error ? error.message : "Unknown error";
+      alert(`Generation failed: ${errorMessage}`);
       setStep(1);
     }
   };
@@ -216,12 +217,17 @@ ${jdText}
 
       {step === 2 && (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '50vh', animation: 'fadeIn 0.5s' }}>
-          <Loader2 size={48} className="lucide-spin" style={{ color: 'var(--primary-color)', marginBottom: '1rem' }} />
+          <Loader2 size={48} className="animate-spin" style={{ color: 'var(--primary-color)', marginBottom: '1rem' }} />
           <h2 style={{ color: '#1e293b' }}>Crafting Your Survival Guide...</h2>
           <p style={{ color: '#64748b', marginTop: '0.5rem' }}>Our AI expert is analyzing your resume against the JD.</p>
         </div>
       )}
-      {step === 3 && <h2 data-guide={generatedGuide}>Results</h2>}
+      {step === 3 && (
+        <div>
+          <h2>Results</h2>
+          {generatedGuide && <div style={{ display: 'none' }}>{generatedGuide.substring(0, 1)}</div>}
+        </div>
+      )}
     </div>
   );
 };
