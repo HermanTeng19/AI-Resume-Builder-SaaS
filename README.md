@@ -11,6 +11,7 @@ A premium, 100% client-side ATS-friendly resume builder and AI optimizer. Built 
 - **Local Document Parsing**: Uses `pdfjs-dist` and `mammoth` to extract raw text from PDF and DOCX files instantly in the browser.
 - **ATS-Optimized Elite Templates**: Ships with 3 premium, recruiter-approved templates (*Silicon Valley*, *Ivy League*, and *Modern Minimalist*) designed specifically to parse perfectly in Applicant Tracking Systems.
 - **AI Resume Optimizer**: Automatically restructures experience bullets into the STAR format (Situation, Task, Action, Result) and semantically injects keywords from your target Job Description.
+- **AI Interview Survival Guide**: A companion tool that generates a hyper-targeted interview preparation markdown document (Core Competencies, Resume Traps, Behavioral STAR, Technical Questions) based on your Resume and JD, complete with a JD Deep-Dive clarification feature.
 - **Pixel-Perfect PDF Export**: Features an advanced CSS `@media print` engine with a bulletproof `Table Thead/Tfoot` wrapper pattern to guarantee perfect multi-page pagination and margins without browser-injected metadata.
 - **SEO-Optimized Blog System & Dynamic Meta Tags**: Includes a built-in markdown-based blogging system with multimedia embedding, auto-generated sitemaps, `robots.txt`, and dynamic React Helmet Async `og:` / `twitter:` meta tags to drive long-tail organic traffic.
 
@@ -57,6 +58,7 @@ A premium, 100% client-side ATS-friendly resume builder and AI optimizer. Built 
 3. **AI Optimization**: Paste the Job Description you are targeting and hit the **AI Resume Optimizer** button. The app will map your experience to the JD and generate high-impact bullets.
 4. **Customize**: Tweak your personal info, skills, and education manually if needed. Switch between different elite themes to match your industry.
 5. **Export**: Hit the **PDF** button to natively print a perfectly paginated, metadata-free resume.
+6. **Interview Prep**: Navigate to the **Interview Prep** tool from the navbar. Upload your tailored resume and the JD to generate a highly customized Markdown "Survival Guide" to help you ace the interview. You can even download the guide as a `.md` file for offline review.
 
 ## 🚧 Roadmap
  

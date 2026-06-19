@@ -1,13 +1,15 @@
 // In src/pages/InterviewPrep.tsx
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { SEO } from '../components/SEO';
-import OpenAI from 'openai';
-import { Upload, X, Loader2 } from 'lucide-react';
+import { Upload, X, Settings as SettingsIcon, Download } from 'lucide-react';
+import { saveAs } from 'file-saver';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { BYOKModal, useBYOK } from '../components/BYOKModal';
 
 const InterviewPrep: React.FC = () => {
   const [step, setStep] = useState<1 | 2 | 3>(1);
+  const [progress, setProgress] = useState(0);
   const [generatedGuide, setGeneratedGuide] = useState('');
   const [resumeText, setResumeText] = useState('');
   const [jdText, setJdText] = useState('');
@@ -20,6 +22,24 @@ const InterviewPrep: React.FC = () => {
   });
   const [fileName, setFileName] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const [showSettings, setShowSettings] = useState(false);
+  const { activeProvider, keys, setKeys, setActiveProvider, getClient, getModelName } = useBYOK();
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (step === 2) {
+      setProgress(0);
+      interval = setInterval(() => {
+        setProgress((p) => {
+          if (p >= 99) return 99;
+          const increment = Math.max(1, Math.floor((99 - p) * 0.15));
+          return p + increment;
+        });
+      }, 500);
+    }
+    return () => clearInterval(interval);
+  }, [step]);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -64,21 +84,15 @@ const InterviewPrep: React.FC = () => {
   };
 
   const generateGuide = async () => {
-    const apiKey = localStorage.getItem('LLM_API_KEY');
-    const baseURL = localStorage.getItem('LLM_BASE_URL') || 'https://api.openai.com/v1';
-    const modelName = localStorage.getItem('LLM_MODEL_NAME') || 'gpt-4o-mini';
+    const openai = getClient();
 
-    if (!apiKey) {
-      alert("Please configure your API Key in the Settings first.");
+    if (!openai) {
+      setShowSettings(true);
       setStep(1);
       return;
     }
 
-    const openai = new OpenAI({
-      apiKey: apiKey,
-      baseURL: baseURL,
-      dangerouslyAllowBrowser: true
-    });
+    const modelName = getModelName();
 
     let prompt = `You are an elite FAANG-level executive recruiter and technical interviewer. Generate a highly targeted interview preparation guide formatted purely in Markdown.
 
@@ -110,13 +124,21 @@ ${jdText}
       
       const content = response.choices[0]?.message?.content || 'No content generated.';
       setGeneratedGuide(content);
-      setStep(3);
+      setProgress(100);
+      setTimeout(() => {
+        setStep(3);
+      }, 600); // Allow time for user to see 100% completion
     } catch (error) {
       console.error("AI Generation Error:", error);
       const errorMessage = error instanceof Error ? error.message : "Unknown error";
       alert(`Generation failed: ${errorMessage}`);
       setStep(1);
     }
+  };
+
+  const handleDownload = () => {
+    const blob = new Blob([generatedGuide], { type: 'text/markdown;charset=utf-8' });
+    saveAs(blob, 'Interview_Survival_Guide.md');
   };
 
   return (
@@ -132,7 +154,12 @@ ${jdText}
           <h1 style={{ textAlign: 'center', marginBottom: '2rem', color: '#1e293b' }}>Generate Your Interview Survival Guide</h1>
           
           <div className="form-group" style={{ marginBottom: '1.5rem' }}>
-            <label htmlFor="resume-text" style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.5rem' }}>1. Upload Resume (PDF/Word)</label>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+              <label htmlFor="resume-text" style={{ fontWeight: 'bold' }}>1. Upload Resume (PDF/Word)</label>
+              <button onClick={() => setShowSettings(true)} className="btn btn-secondary" style={{ padding: '4px 8px', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SettingsIcon size={14} /> BYOK Settings
+              </button>
+            </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
               <label className="btn-cohere" style={{ cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                 <Upload size={18} /> Upload File
@@ -219,7 +246,21 @@ ${jdText}
 
       {step === 2 && (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '50vh', animation: 'fadeIn 0.5s' }}>
-          <Loader2 size={48} className="animate-spin" style={{ color: 'var(--primary-color)', marginBottom: '1rem' }} />
+          <div style={{ position: 'relative', width: '120px', height: '120px', marginBottom: '2rem' }}>
+            <svg width="120" height="120" viewBox="0 0 120 120" style={{ transform: 'rotate(-90deg)' }}>
+              <circle cx="60" cy="60" r="54" fill="transparent" stroke="var(--border-color)" strokeWidth="8" />
+              <circle 
+                cx="60" cy="60" r="54" fill="transparent" stroke="var(--primary-color)" strokeWidth="8" 
+                strokeDasharray={2 * Math.PI * 54} 
+                strokeDashoffset={(2 * Math.PI * 54) - (progress / 100) * (2 * Math.PI * 54)} 
+                strokeLinecap="round" 
+                style={{ transition: 'stroke-dashoffset 0.5s ease' }} 
+              />
+            </svg>
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span style={{ fontSize: '24px', fontWeight: 'bold', color: 'var(--primary-color)' }}>{progress}%</span>
+            </div>
+          </div>
           <h2 style={{ color: '#1e293b' }}>Crafting Your Survival Guide...</h2>
           <p style={{ color: '#64748b', marginTop: '0.5rem' }}>Our AI expert is analyzing your resume against the JD.</p>
         </div>
@@ -228,30 +269,50 @@ ${jdText}
         <div className="wizard-step" style={{ animation: 'fadeIn 0.5s', maxWidth: '800px', margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
             <h2 style={{ color: '#1e293b', margin: 0 }}>Your Interview Survival Guide</h2>
-            <button 
-              className="btn-cohere" 
-              onClick={() => {
-                setStep(1);
-                setGeneratedGuide('');
-                setResumeText('');
-                setJdText('');
-                setConfusedPoints('');
-                setFileName('');
-                if (fileInputRef.current) fileInputRef.current.value = '';
-              }}
-              style={{ padding: '0.5rem 1rem', border: '1px solid #cbd5e1', borderRadius: '4px', background: 'transparent', cursor: 'pointer' }}
-            >
-              Start Over
-            </button>
+            <div style={{ display: 'flex', gap: '1rem' }}>
+              <button 
+                className="btn btn-primary" 
+                onClick={handleDownload}
+                style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+              >
+                <Download size={16} /> Download Guide
+              </button>
+              <button 
+                className="btn btn-secondary" 
+                onClick={() => {
+                  setStep(1);
+                  setGeneratedGuide('');
+                  setResumeText('');
+                  setJdText('');
+                  setConfusedPoints('');
+                  setFileName('');
+                  if (fileInputRef.current) fileInputRef.current.value = '';
+                }}
+                style={{ cursor: 'pointer' }}
+              >
+                Start Over
+              </button>
+            </div>
           </div>
 
-          <div className="markdown-body blog-markdown" style={{ background: '#fff', padding: '2rem', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}>
+          <div className="markdown-body interview-markdown" style={{ background: '#fff', padding: '2rem', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}>
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
               {generatedGuide}
             </ReactMarkdown>
           </div>
         </div>
       )}
+
+      <BYOKModal 
+        isOpen={showSettings} 
+        onClose={() => setShowSettings(false)}
+        activeProvider={activeProvider}
+        keys={keys}
+        setKeys={setKeys}
+        setActiveProvider={setActiveProvider}
+        getClient={getClient}
+        getModelName={getModelName}
+      />
     </div>
   );
 };
