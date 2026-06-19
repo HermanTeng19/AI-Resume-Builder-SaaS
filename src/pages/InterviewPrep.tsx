@@ -1,10 +1,12 @@
 // In src/pages/InterviewPrep.tsx
 import React, { useState, useRef } from 'react';
 import { SEO } from '../components/SEO';
-import { Upload, X } from 'lucide-react';
+import OpenAI from 'openai';
+import { Upload, X, Loader2 } from 'lucide-react';
 
 const InterviewPrep: React.FC = () => {
   const [step, setStep] = useState<1 | 2 | 3>(1);
+  const [generatedGuide, setGeneratedGuide] = useState('');
   const [resumeText, setResumeText] = useState('');
   const [jdText, setJdText] = useState('');
   const [confusedPoints, setConfusedPoints] = useState('');
@@ -56,7 +58,62 @@ const InterviewPrep: React.FC = () => {
       return;
     }
     setStep(2);
-    // AI call will go here
+    generateGuide();
+  };
+
+  const generateGuide = async () => {
+    const apiKey = localStorage.getItem('LLM_API_KEY');
+    const baseURL = localStorage.getItem('LLM_BASE_URL') || 'https://api.openai.com/v1';
+    const modelName = localStorage.getItem('LLM_MODEL_NAME') || 'gpt-4o-mini';
+
+    if (!apiKey) {
+      alert("Please configure your API Key in the Settings first.");
+      setStep(1);
+      return;
+    }
+
+    const openai = new OpenAI({
+      apiKey: apiKey,
+      baseURL: baseURL,
+      dangerouslyAllowBrowser: true
+    });
+
+    let prompt = `You are an elite FAANG-level executive recruiter and technical interviewer. Generate a highly targeted interview preparation guide formatted purely in Markdown.
+
+### Resume Context:
+${resumeText}
+
+### Job Description Context:
+${jdText}
+`;
+
+    if (confusedPoints) {
+      prompt += `\n### JD Clarification & Expert Guidance (HIGH PRIORITY)\nThe user is confused about the following terms/points from the JD: "${confusedPoints}".\nPlease use your vast training data to act as an authoritative expert. Dedicate the FIRST section of the guide (titled "JD Deep Dive & Clarification") to explain these exact points in simple, actionable terms.\n`;
+    }
+
+    prompt += `\nPlease include the following sections based on user request:\n`;
+    if (modules.core) prompt += `- Core Competency Breakdown: Analyze what the JD is really asking for.\n`;
+    if (modules.deepDive) prompt += `- Resume Deep-Dive & Trap Questions: Look at the user's resume, find weaknesses or areas the interviewer will likely grill them on, and suggest how to pivot.\n`;
+    if (modules.behavioral) prompt += `- Behavioral Questions (STAR): 3 likely behavioral questions with advice on structuring a STAR response based on their resume.\n`;
+    if (modules.technical) prompt += `- Technical/Domain Specific: 3-5 likely hard-skills questions.\n`;
+
+    prompt += `\nMake the tone encouraging but highly professional. Output ONLY Markdown.`;
+
+    try {
+      const response = await openai.chat.completions.create({
+        model: modelName,
+        messages: [{ role: 'user', content: prompt }],
+        temperature: 0.7,
+      });
+      
+      const content = response.choices[0]?.message?.content || 'No content generated.';
+      setGeneratedGuide(content);
+      setStep(3);
+    } catch (error: any) {
+      console.error("AI Generation Error:", error);
+      alert(`Generation failed: ${error.message}`);
+      setStep(1);
+    }
   };
 
   return (
@@ -157,8 +214,14 @@ const InterviewPrep: React.FC = () => {
         </div>
       )}
 
-      {step === 2 && <h2>Generating...</h2>}
-      {step === 3 && <h2>Results</h2>}
+      {step === 2 && (
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '50vh', animation: 'fadeIn 0.5s' }}>
+          <Loader2 size={48} className="lucide-spin" style={{ color: 'var(--primary-color)', marginBottom: '1rem' }} />
+          <h2 style={{ color: '#1e293b' }}>Crafting Your Survival Guide...</h2>
+          <p style={{ color: '#64748b', marginTop: '0.5rem' }}>Our AI expert is analyzing your resume against the JD.</p>
+        </div>
+      )}
+      {step === 3 && <h2 data-guide={generatedGuide}>Results</h2>}
     </div>
   );
 };
