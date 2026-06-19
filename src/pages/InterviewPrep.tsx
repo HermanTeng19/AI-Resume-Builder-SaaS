@@ -3,6 +3,8 @@ import React, { useState, useRef } from 'react';
 import { SEO } from '../components/SEO';
 import OpenAI from 'openai';
 import { Upload, X, Loader2 } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 const InterviewPrep: React.FC = () => {
   const [step, setStep] = useState<1 | 2 | 3>(1);
@@ -223,9 +225,26 @@ ${jdText}
         </div>
       )}
       {step === 3 && (
-        <div>
-          <h2>Results</h2>
-          {generatedGuide && <div style={{ display: 'none' }}>{generatedGuide.substring(0, 1)}</div>}
+        <div className="wizard-step" style={{ animation: 'fadeIn 0.5s', maxWidth: '800px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+            <h2 style={{ color: '#1e293b', margin: 0 }}>Your Interview Survival Guide</h2>
+            <button 
+              className="btn-secondary" 
+              onClick={() => {
+                setStep(1);
+                setGeneratedGuide('');
+              }}
+              style={{ padding: '0.5rem 1rem', border: '1px solid #cbd5e1', borderRadius: '4px', background: 'transparent', cursor: 'pointer' }}
+            >
+              Start Over
+            </button>
+          </div>
+
+          <div className="markdown-body" style={{ background: '#fff', padding: '2rem', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}>
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {generatedGuide}
+            </ReactMarkdown>
+          </div>
         </div>
       )}
     </div>
