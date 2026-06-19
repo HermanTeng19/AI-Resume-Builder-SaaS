@@ -111,7 +111,7 @@ const Landing: React.FC = () => {
               <span style={{ fontSize: '13px', color: 'var(--text-muted)', fontWeight: 500 }}>⚡ Instant Live Preview</span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-              <Link to="/interview-prep" className="btn btn-secondary btn-lg" style={{ background: 'var(--cohere-black)', color: 'white', borderColor: 'var(--cohere-black)' }}>
+              <Link to="/interview-prep" className="btn btn-primary btn-lg">
                 Try Interview Prep Guide <ArrowRight size={18} />
               </Link>
               <span style={{ fontSize: '13px', color: 'var(--text-muted)', fontWeight: 500 }}>🎯 JD-Targeted Strategy</span>
@@ -153,17 +153,17 @@ const Landing: React.FC = () => {
           <p>Bring Your Own Key (BYOK) for unlimited, completely private local processing across 14+ flagship models (OpenAI, DeepSeek, etc.). Your data never leaves your browser.</p>
         </div>
         <div className="feature-card">
-          <div className="feature-icon-wrapper" style={{ background: '#e0e7ff', color: '#4f46e5' }}><Search size={24} /></div>
+          <div className="feature-icon-wrapper"><Search size={24} className="feature-icon" /></div>
           <h3>JD Trap Analysis</h3>
           <p>Uncover hidden red flags and complex technical requirements in the Job Description. The AI acts as an authoritative expert to demystify confusing JD bullet points.</p>
         </div>
         <div className="feature-card">
-          <div className="feature-icon-wrapper" style={{ background: '#fef3c7', color: '#d97706' }}><Star size={24} /></div>
+          <div className="feature-icon-wrapper"><Star size={24} className="feature-icon" /></div>
           <h3>Behavioral STAR Mapping</h3>
           <p>Automatically map your resume bullets to anticipated behavioral questions, generating perfectly structured STAR (Situation, Task, Action, Result) responses for your interview.</p>
         </div>
         <div className="feature-card">
-          <div className="feature-icon-wrapper" style={{ background: '#dcfce7', color: '#16a34a' }}><FileDown size={24} /></div>
+          <div className="feature-icon-wrapper"><FileDown size={24} className="feature-icon" /></div>
           <h3>Portable Survival Guides</h3>
           <p>Export your highly customized interview preparation guide as a portable Markdown (.md) file for offline review on Notion, Obsidian, or VS Code before the big day.</p>
         </div>
