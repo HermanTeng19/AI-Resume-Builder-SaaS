@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, ShieldCheck, Target, PenTool, Download, UploadCloud, Briefcase, GraduationCap } from 'lucide-react';
+import { ArrowRight, CheckCircle, ShieldCheck, Target, PenTool, Download, UploadCloud, Briefcase, GraduationCap, Search, Star, FileDown, MessageSquare } from 'lucide-react';
 import { SEO } from '../components/SEO';
 
 const modules = import.meta.glob('../content/blog/*.md', { query: '?raw', import: 'default', eager: true });
@@ -45,7 +45,7 @@ const articles = Object.keys(modules).map((path) => {
 
 const testimonials = [
   {
-    text: "I’ve subscribed to dozens of career newsletters, but Career Insight Labs stands out. The AI resume optimizer combined with deep industry reflection helped me land my dream job. It's thoughtful, and quietly inspiring.",
+    text: "I’ve subscribed to dozens of career newsletters, but Career Insight Labs stands out. The AI resume optimizer combined with the hyper-targeted interview survival guide helped me land my dream job. It's thoughtful, and quietly inspiring.",
     name: "Sarah Jenkins",
     title: "Product Manager",
     avatar: "https://randomuser.me/api/portraits/women/44.jpg"
@@ -75,7 +75,7 @@ const testimonials = [
     avatar: "https://randomuser.me/api/portraits/women/89.jpg"
   },
   {
-    text: "I was skeptical about AI resume builders until I found this. The targeted Job Description keyword injection completely changed my application strategy. Highly recommend it to anyone stuck in the job hunt.",
+    text: "I was skeptical about AI resume builders until I found this. The targeted Job Description keyword injection got me past the ATS, and the generated STAR behavioral answers saved me during the final interview round.",
     name: "Marcus Johnson",
     title: "Marketing Director",
     avatar: "https://randomuser.me/api/portraits/men/22.jpg"
@@ -101,18 +101,21 @@ const Landing: React.FC = () => {
             Master the Hiring Game.<br/><span className="gradient-text">AI Tools & Expert Insights.</span>
           </h1>
           <p className="hero-subtitle">
-            We analyze millions of data points to decode what modern Applicant Tracking Systems (ATS) want. Read our latest research or use our free AI tool to optimize your resume instantly.
+            We analyze millions of data points to decode what modern Applicant Tracking Systems (ATS) want. Use our free AI tools to optimize your resume instantly and prepare for interviews with hyper-targeted survival guides.
           </p>
-          <div className="hero-buttons">
+          <div className="hero-buttons" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
               <Link to="/app" className="btn btn-primary btn-lg">
                 Try Free Resume Optimizer <ArrowRight size={18} />
               </Link>
               <span style={{ fontSize: '13px', color: 'var(--text-muted)', fontWeight: 500 }}>⚡ Instant Live Preview</span>
             </div>
-            <Link to="/blog" className="btn btn-secondary btn-lg" style={{ alignSelf: 'flex-start' }}>
-              Read Career Guides
-            </Link>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+              <Link to="/interview-prep" className="btn btn-secondary btn-lg" style={{ background: 'var(--cohere-black)', color: 'white', borderColor: 'var(--cohere-black)' }}>
+                Try Interview Prep Guide <ArrowRight size={18} />
+              </Link>
+              <span style={{ fontSize: '13px', color: 'var(--text-muted)', fontWeight: 500 }}>🎯 JD-Targeted Strategy</span>
+            </div>
           </div>
         </div>
       </section>
@@ -148,6 +151,21 @@ const Landing: React.FC = () => {
           <div className="feature-icon-wrapper"><CheckCircle size={24} className="feature-icon" /></div>
           <h3>100% Privacy & BYOK</h3>
           <p>Bring Your Own Key (BYOK) for unlimited, completely private local processing across 14+ flagship models (OpenAI, DeepSeek, etc.). Your data never leaves your browser.</p>
+        </div>
+        <div className="feature-card">
+          <div className="feature-icon-wrapper" style={{ background: '#e0e7ff', color: '#4f46e5' }}><Search size={24} /></div>
+          <h3>JD Trap Analysis</h3>
+          <p>Uncover hidden red flags and complex technical requirements in the Job Description. The AI acts as an authoritative expert to demystify confusing JD bullet points.</p>
+        </div>
+        <div className="feature-card">
+          <div className="feature-icon-wrapper" style={{ background: '#fef3c7', color: '#d97706' }}><Star size={24} /></div>
+          <h3>Behavioral STAR Mapping</h3>
+          <p>Automatically map your resume bullets to anticipated behavioral questions, generating perfectly structured STAR (Situation, Task, Action, Result) responses for your interview.</p>
+        </div>
+        <div className="feature-card">
+          <div className="feature-icon-wrapper" style={{ background: '#dcfce7', color: '#16a34a' }}><FileDown size={24} /></div>
+          <h3>Portable Survival Guides</h3>
+          <p>Export your highly customized interview preparation guide as a portable Markdown (.md) file for offline review on Notion, Obsidian, or VS Code before the big day.</p>
         </div>
       </section>
 
@@ -205,6 +223,27 @@ const Landing: React.FC = () => {
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-color)' }}><CheckCircle size={20} style={{ color: '#10b981' }} /> Smart STAR method injection</li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-color)' }}><CheckCircle size={20} style={{ color: '#10b981' }} /> Action verb enhancements</li>
               <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-color)' }}><CheckCircle size={20} style={{ color: '#10b981' }} /> Automatic skills extraction & sorting</li>
+            </ul>
+          </div>
+          {/* Interview Card */}
+          <div className="glass-card" style={{ padding: '3rem', borderRadius: '24px', border: '1px solid var(--border-color)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'linear-gradient(90deg, #8b5cf6, transparent)' }}></div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+              <div style={{ padding: '1rem', borderRadius: '16px', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)' }}>
+                <MessageSquare size={28} style={{ color: '#8b5cf6' }} />
+              </div>
+              <div>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, margin: 0 }}>Interview Candidates</h3>
+                <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Predict & Prepare</span>
+              </div>
+            </div>
+            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '2.5rem', flex: 1 }}>
+              Stop guessing what they will ask. Generate a <strong>hyper-targeted survival guide</strong> based on your exact resume and the target JD to anticipate trap questions.
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-color)' }}><CheckCircle size={20} style={{ color: '#8b5cf6' }} /> Clarify confusing JD terms</li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-color)' }}><CheckCircle size={20} style={{ color: '#8b5cf6' }} /> Tailored STAR behavioral stories</li>
+              <li style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text-color)' }}><CheckCircle size={20} style={{ color: '#8b5cf6' }} /> Anticipate domain technical questions</li>
             </ul>
           </div>
         </div>
