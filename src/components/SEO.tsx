@@ -10,8 +10,8 @@ interface SEOProps {
 }
 
 export const SEO: React.FC<SEOProps> = ({
-  title = "Career Insight Labs - Free AI Resume Builder",
-  description = "Bypass ATS algorithms and land interviews at top-tier companies with our privacy-first, free AI Resume Builder.",
+  title = "Career Insight Labs - AI Resume Builder & Interview Prep",
+  description = "Bypass ATS algorithms, build resumes, and generate targeted interview prep guides with our privacy-first AI tools.",
   type = "website",
   name = "Career Insight Labs",
   url = "https://careerinsightlabs.com",
