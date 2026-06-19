@@ -142,12 +142,13 @@ ${jdText}
   };
 
   return (
-    <div className="page-container" style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem 1rem' }}>
+    <>
       <SEO 
         title="AI Interview Prep Guide | Career Insight Labs"
         description="Generate a highly targeted interview preparation guide based on your resume and job description."
         url="https://careerinsightlabs.com/interview-prep"
       />
+      <div className="page-container" style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem 1rem', minHeight: 'calc(100vh - 73px)' }}>
       
       {step === 1 && (
         <div className="wizard-step" style={{ animation: 'fadeInUp 0.5s ease-out' }}>
@@ -313,7 +314,50 @@ ${jdText}
         getClient={getClient}
         getModelName={getModelName}
       />
-    </div>
+      </div>
+
+      {/* Quick Guide & FAQ Section */}
+      <section className="seo-content-section" style={{ padding: '4rem 2rem', backgroundColor: '#f8fafc', borderTop: '1px solid var(--border-color)' }}>
+        <div className="page-container" style={{ margin: '0 auto', boxShadow: 'none', border: 'none', backgroundColor: 'transparent', maxWidth: '900px' }}>
+          <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: '#0f172a' }}>Quick Guide: How to Prepare for Your Interview</h2>
+          <p style={{ fontSize: '1.1rem', color: '#475569', marginBottom: '2rem', lineHeight: '1.8' }}>
+            Our AI Interview Survival Guide generator is designed to anticipate the exact questions recruiters and hiring managers will ask based on your unique resume and target Job Description (JD).
+          </p>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
+            <div style={{ background: 'white', padding: '2rem', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
+              <h4 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--primary-color)' }}>1. Configure BYOK (Bring Your Own Key)</h4>
+              <p style={{ color: '#64748b' }}>Click the ⚙️ <strong>BYOK Settings</strong> button. Select your preferred AI provider (like OpenAI or Anthropic) and paste your API key. This ensures 100% privacy and unlimited usage at a fraction of a cent per generation.</p>
+            </div>
+            <div style={{ background: 'white', padding: '2rem', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
+              <h4 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--primary-color)' }}>2. Provide Context</h4>
+              <p style={{ color: '#64748b' }}>Upload your latest Resume (PDF/Word) and paste the exact Job Description. If there are any confusing terms in the JD, paste them in the Clarification box for the AI to decode.</p>
+            </div>
+            <div style={{ background: 'white', padding: '2rem', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>
+              <h4 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--primary-color)' }}>3. Generate & Practice</h4>
+              <p style={{ color: '#64748b' }}>Select your desired modules (Behavioral, Technical, Trap Analysis) and generate your guide. Download the Markdown file to practice offline before the big day.</p>
+            </div>
+          </div>
+
+          <h2 style={{ fontSize: '2rem', marginBottom: '2rem', color: '#0f172a', marginTop: '4rem' }}>Frequently Asked Questions (FAQ)</h2>
+          
+          <div className="faq-item" style={{ background: 'white', padding: '1.5rem', borderRadius: '12px', marginBottom: '1rem', border: '1px solid var(--border-color)' }}>
+            <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#1e293b' }}>What is BYOK and why do I need it?</h4>
+            <p style={{ color: '#64748b' }}>BYOK stands for "Bring Your Own Key". Instead of charging you an expensive monthly subscription, we allow you to plug in your own API key from providers like OpenAI or Anthropic. You only pay the provider directly for exactly what you use (usually pennies per guide) while keeping your resume data completely private and local to your browser.</p>
+          </div>
+          
+          <div className="faq-item" style={{ background: 'white', padding: '1.5rem', borderRadius: '12px', marginBottom: '1rem', border: '1px solid var(--border-color)' }}>
+            <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#1e293b' }}>How does the AI anticipate interview questions?</h4>
+            <p style={{ color: '#64748b' }}>The AI acts as an elite technical recruiter. It cross-references the requirements of the Job Description with the experiences listed on your resume to identify "gaps" or "traps" that interviewers naturally gravitate towards, formulating perfectly targeted questions.</p>
+          </div>
+          
+          <div className="faq-item" style={{ background: 'white', padding: '1.5rem', borderRadius: '12px', marginBottom: '1rem', border: '1px solid var(--border-color)' }}>
+            <h4 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#1e293b' }}>What is the STAR method?</h4>
+            <p style={{ color: '#64748b' }}>STAR stands for Situation, Task, Action, and Result. It is the gold standard for answering behavioral interview questions. Our AI will automatically map your resume experiences into the STAR format to help you structure your answers flawlessly.</p>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
