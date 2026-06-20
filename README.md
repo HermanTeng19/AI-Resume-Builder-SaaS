@@ -13,7 +13,7 @@ A premium, 100% client-side ATS-friendly resume builder and AI optimizer. Built 
 - **AI Resume Optimizer**: Automatically restructures experience bullets into the STAR format (Situation, Task, Action, Result) and semantically injects keywords from your target Job Description.
 - **AI Interview Survival Guide**: A companion tool that generates a hyper-targeted interview preparation markdown document (Core Competencies, Resume Traps, Behavioral STAR, Technical Questions) based on your Resume and JD, complete with a JD Deep-Dive clarification feature.
 - **Pixel-Perfect PDF Export**: Features an advanced CSS `@media print` engine with a bulletproof `Table Thead/Tfoot` wrapper pattern to guarantee perfect multi-page pagination and margins without browser-injected metadata.
-- **SEO-Optimized Blog System & Dynamic Meta Tags**: Includes a built-in markdown-based blogging system with multimedia embedding, auto-generated sitemaps, `robots.txt`, and dynamic React Helmet Async `og:` / `twitter:` meta tags to drive long-tail organic traffic.
+- **SEO-Optimized Blog System & Autonomous Publishing**: Includes a built-in markdown blogging engine with auto-generated sitemaps and dynamic React Helmet Async meta tags. Powered by an autonomous AI agent CRON pipeline that automatically formats new drafts, generates original cinematic cover images, updates routing maps, and deploys to Vercel without human intervention.
 
 ## 🛠 Tech Stack
 
