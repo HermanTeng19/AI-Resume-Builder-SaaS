@@ -29,4 +29,6 @@ export const imageMap: Record<string, string> = {
   '28-Counter-Offer-Trap': '/blog-images/counter_offer_trap.png',
   '29-First-90-Days-Senior-Engineer': 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80',
   '30-Networking-For-Engineers-No-Small-Talk': 'https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=800&q=80',
+  '31-AI-Skills-on-Your-Resume-Are-No-Longer-Optional-How-to-Position-Yourself-for-the': '/blog-images/ai_skills_resume.jpg',
+  '32-Entry-Level-Tech-Jobs-Are-Disappearing-What-New-Grads-Must-Do-Differently-in-202': '/blog-images/entry_level_tech.jpg',
 };
