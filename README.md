@@ -65,6 +65,7 @@ A premium, 100% client-side ATS-friendly resume builder and AI optimizer. Built 
  - [x] **Production Deployment**: Connected to Vercel for public edge hosting and mapped custom domain `careerinsightlabs.com`.
  - [x] **Serverless Backend (Contact Form)**: Implement Vercel Serverless Functions (`/api/contact.ts`) to securely process form submissions via the Resend API without exposing credentials on the client.
  - [x] **Comprehensive SEO**: Added React Helmet meta tags, `robots.txt`, auto-sitemap generation for the blog, and submitted to Google Search Console.
+ - [x] **Social Share Ecosystem**: Added one-click social share functionality (Mail, X, LinkedIn, WhatsApp, Reddit, Instagram) to the blog to boost organic traffic.
  - [x] **Mobile Optimization**: Polished the responsiveness of the App Tool editor layout and global navigation (Hamburger menu).
  - [ ] **Backend Decision (Free Tries)**: Finalize whether the 3 "Free Tries" remain a local mock or transition to a real serverless backend to allow actual AI calls for free users.
  - [ ] Introduce a real-time ATS keyword matching score.
