@@ -116,18 +116,3 @@ The candidates I've seen succeed in this environment share one characteristic: t
 The market has changed. Your strategy should too.
 
 ---
-
-```html
-<title>Entry-Level Tech Jobs Disappearing: What to Do in 2025</title>
-<meta name="description" content="Entry-level tech hiring is collapsing in 2025. A FAANG recruiter breaks down the data and shares an actionable framework for new grads to compete.">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Entry-Level Tech Jobs Are Disappearing: What New Grads Must Do Differently in 2025",
-  "description": "Entry-level tech hiring has collapsed according to SignalFire and Ravio research. A senior FAANG recruiter breaks down what the data really means and provides an actionable framework for new graduates and career switchers to compete in a restructured market.",
-  "author": {"@type": "Person", "name": "Senior Tech Recruiter, Career Insight Labs"},
-  "datePublished": "2026-06-19"
-}
-</script>
-```

@@ -127,18 +127,3 @@ That's a story you can start building today — regardless of where you are in y
 **If you want to benchmark your current AI skill profile against what hiring managers at top tech companies are actually screening for, explore the free career assessment tools at [careerinsightlabs.com](https://careerinsightlabs.com). It takes 10 minutes and tells you exactly where your resume stands.**
 
 ---
-
-```html
-<title>AI Skills on Your Resume: What Hirers Want in 2026</title>
-<meta name="description" content="AI job postings are up 134% from 2020 while overall hiring is flat. A FAANG recruiter explains exactly how to position your AI skills to get hired in 2026.">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "AI Skills on Your Resume Are No Longer Optional: How to Position Yourself for the Jobs That Are Actually Being Filled in 2026",
-  "description": "AI-mentioning job postings are up 134% from 2020 baselines while total job postings are nearly flat. A senior FAANG recruiter breaks down the data and provides an actionable framework for making your AI skills hireable in 2026.",
-  "author": {"@type": "Person", "name": "Senior Tech Recruiter, careerinsightlabs.com"},
-  "datePublished": "2026-06-19"
-}
-</script>
-```
