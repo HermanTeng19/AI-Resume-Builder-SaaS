@@ -22,8 +22,14 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# local env files
+.env.local
+.env.*.local
 
-# Project Management
+# Strategy and internal documents
+UPDATE_BLOG_PROMPT.md
+linkedin_promo.md
+LINKEDIN_PROMO.md
 PROJECT_STATUS.md
 AdSense-Approval-Strategy.md
 AI-Resume-Builder-SaaS-Execution-Plan.md
@@ -33,3 +39,4 @@ Project-Initialization-Prompt.md
 SEO-Article-Topics-Top10.md
 .vercel
 .env
+other-materials/
