@@ -32,4 +32,7 @@ export const imageMap: Record<string, string> = {
   '31-AI-Skills-on-Your-Resume-Are-No-Longer-Optional-How-to-Position-Yourself-for-the': '/blog-images/ai_skills_resume.jpg',
   '32-Entry-Level-Tech-Jobs-Are-Disappearing-What-New-Grads-Must-Do-Differently-in-202': '/blog-images/entry_level_tech.jpg',
   '33-The-AI-Skills-That-Will-Land-You-a-Six-Figure-Job-in-2026-Even-Without-a-Degree': '/blog-images/blog_cover_33.jpg',
+  '34-As-a-FAANG-Recruiter-Ive-Watched-Remote-Work-Become-a-Non-Negotiable-Heres-What-': '/blog-images/blog_cover_34.jpg',
+  '35-Why-AI-Will-Reshape-More-Jobs-Than-It-ReplacesAnd-What-Top-Talent-Does-Different': '/blog-images/blog_cover_35.jpg',
+  '36-How-to-Beat-Applicant-Tracking-Systems-in-2026-A-Senior-FAANG-Recruiters-Data-Dr': '/blog-images/blog_cover_36.jpg',
 };
