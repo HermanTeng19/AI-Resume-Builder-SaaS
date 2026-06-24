@@ -35,4 +35,5 @@ export const imageMap: Record<string, string> = {
   '34-As-a-FAANG-Recruiter-Ive-Watched-Remote-Work-Become-a-Non-Negotiable-Heres-What-': '/blog-images/blog_cover_34.jpg',
   '35-Why-AI-Will-Reshape-More-Jobs-Than-It-ReplacesAnd-What-Top-Talent-Does-Different': '/blog-images/blog_cover_35.jpg',
   '36-How-to-Beat-Applicant-Tracking-Systems-in-2026-A-Senior-FAANG-Recruiters-Data-Dr': '/blog-images/blog_cover_36.jpg',
+  '37-AI-Skills-Are-Now-Non-Negotiable-What-Tech-Recruiters-Actually-Screen-For-in-202': 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80',
 };
