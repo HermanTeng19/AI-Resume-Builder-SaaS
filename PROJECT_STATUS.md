@@ -77,6 +77,9 @@ Resume: agy --conversation=51ed0cbe-faeb-45ab-9074-688607348341
 * [x] **Social Share Ecosystem:** Implemented a full-featured social share bar in `BlogPost.tsx` for easy content syndication across Mail, X, LinkedIn, Facebook, WhatsApp, Reddit, and Instagram.
 * [x] **Repository Cleanup:** Relocated operational documents to a git-ignored `other-materials/` directory to maintain a pristine, open-source-ready codebase.
 * [x] **LinkedIn Featured Section:** Designed a premium 16:9 thumbnail and generated professional copy to showcase the SaaS project in the developer's LinkedIn Featured section.
+* [x] **Agent Infrastructure & Best Practices:** Enforced strict AI Agent behavioral rules (via `.agents/AGENTS.md`) for automated workflows, ensuring priority on real-world/Unsplash image curation and zero-tolerance HTML stripping in Markdown generation.
+* [x] **Content Expansion & Publishing:** Automatically processed and successfully published Articles 34, 35, and 36 via the updated autonomous prompt, complete with custom cover images, updated image maps, and live sitemap insertion.
+* [x] **Marketing Automation Setup:** Installed the `linkedin-posts` marketing skill into the project context (`.agents/skills/`) to empower future professional social media orchestration.
 ## 4. Remaining Tasks (Post-MVP 1)
 * [ ] **Backend Decision (Free Tries):** Finalize whether the 3 "Free Tries" remain a local mock or transition to a real serverless backend to allow actual AI calls for free users (e.g. tracking IP or accounts).
 * [ ] **Real-time ATS Keyword Matching Score:** Build a real-time matching algorithm and progress bar to score the generated resume against the provided Job Description.

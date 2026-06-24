@@ -67,6 +67,7 @@ A premium, 100% client-side ATS-friendly resume builder and AI optimizer. Built 
  - [x] **Comprehensive SEO**: Added React Helmet meta tags, `robots.txt`, auto-sitemap generation for the blog, and submitted to Google Search Console.
  - [x] **Social Share Ecosystem**: Added one-click social share functionality (Mail, X, LinkedIn, WhatsApp, Reddit, Instagram) to the blog to boost organic traffic.
  - [x] **Mobile Optimization**: Polished the responsiveness of the App Tool editor layout and global navigation (Hamburger menu).
+ - [x] **Autonomous Agent Tooling**: Set up project-scoped AI Agent behavioral rules for robust content pipelines and integrated the `linkedin-posts` marketing skill for seamless social media syndication.
  - [ ] **Backend Decision (Free Tries)**: Finalize whether the 3 "Free Tries" remain a local mock or transition to a real serverless backend to allow actual AI calls for free users.
  - [ ] Introduce a real-time ATS keyword matching score.
 
