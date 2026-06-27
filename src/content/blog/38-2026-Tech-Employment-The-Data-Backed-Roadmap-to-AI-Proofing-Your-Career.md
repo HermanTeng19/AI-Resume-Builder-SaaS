@@ -67,14 +67,3 @@ The 300 million job figure is a signal, not a sentence. Tech employment in 2026 
 
 If you found this useful, I’ll be posting a follow-up next week on the exact salary negotiation scripts I’ve seen add 15–20% to offers in this AI-driven market. Subscribe to the blog to get it in your inbox. And drop a comment with your biggest 2026 career concern—I’ll answer the top three questions from a recruiter’s desk.
 
-```html
-<title>2026 Tech Employment: The Data-Backed Roadmap to AI-Proofing Your Career</title>
-<meta name="description" content="A FAANG recruiter with 12+ years reveals the AI-proof skills, remote work realities, and job search framework that top tech candidates use to land roles in 2026.">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "2026 Tech Employment: The Data-Backed Roadmap to AI-Proofing Your Career",
-  "description": "A FAANG recruiter with 12+ years reveals the AI-proof skills, remote work realities, and job search framework that top tech candidates use to land roles in 2026.",
-  "author": {"@type": "Person", "name": "Senior Tech Recruiter"},
-  "datePublished": "2026-06
