@@ -36,4 +36,6 @@ export const imageMap: Record<string, string> = {
   '35-Why-AI-Will-Reshape-More-Jobs-Than-It-ReplacesAnd-What-Top-Talent-Does-Different': '/blog-images/blog_cover_35.jpg',
   '36-How-to-Beat-Applicant-Tracking-Systems-in-2026-A-Senior-FAANG-Recruiters-Data-Dr': '/blog-images/blog_cover_36.jpg',
   '37-AI-Skills-Are-Now-Non-Negotiable-What-Tech-Recruiters-Actually-Screen-For-in-202': 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80',
+  '38-2026-Tech-Employment-The-Data-Backed-Roadmap-to-AI-Proofing-Your-Career': 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=800&q=80',
+  '39-The-Contract-Work-Trap-Why-Tech-Professionals-Leave-Money-on-the-Table-A-FAANG-R': 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80',
 };
