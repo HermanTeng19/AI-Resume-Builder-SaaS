@@ -38,4 +38,5 @@ export const imageMap: Record<string, string> = {
   '37-AI-Skills-Are-Now-Non-Negotiable-What-Tech-Recruiters-Actually-Screen-For-in-202': 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80',
   '38-2026-Tech-Employment-The-Data-Backed-Roadmap-to-AI-Proofing-Your-Career': 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=800&q=80',
   '39-The-Contract-Work-Trap-Why-Tech-Professionals-Leave-Money-on-the-Table-A-FAANG-R': 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80',
+  '40-The-69-FAANG-Hiring-Surge-Why-2024-Is-Your-Best-Shot-to-Pivot-into-AI-Machine-Le': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
 };
