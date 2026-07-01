@@ -1,3 +1,1 @@
-# Google AdSense Publisher ID
-# Replace this line with the code provided by Google AdSense upon approval
-# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-8304333807268502, DIRECT, f08c47fec0942fa0
