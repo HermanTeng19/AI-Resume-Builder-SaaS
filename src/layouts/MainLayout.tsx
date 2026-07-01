@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ArrowUp } from 'lucide-react';
+import CookieBanner from '../components/CookieBanner';
 
 const MainLayout: React.FC = () => {
   const location = useLocation();
@@ -108,6 +109,7 @@ const MainLayout: React.FC = () => {
           <ArrowUp size={24} />
         </button>
       )}
+      <CookieBanner />
     </div>
   );
 };

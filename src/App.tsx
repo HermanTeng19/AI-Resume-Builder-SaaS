@@ -7,6 +7,7 @@ import BlogPost from './pages/BlogPost';
 import TrustPage from './pages/TrustPage';
 import Contact from './pages/Contact';
 import InterviewPrep from './pages/InterviewPrep';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="about" element={<TrustPage title="About Us" />} />
         <Route path="disclaimer" element={<TrustPage title="Disclaimer" />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
