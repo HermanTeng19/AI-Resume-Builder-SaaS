@@ -2,6 +2,8 @@
 
 > *Senior Tech Recruiter @ Career Insight Labs<br/>2026-07-02*
 
+---
+
 I’ve spent over a dozen years inside the recruiting machinery of a North American FAANG company. I’ve screened more resumes than I can count, fought for headcount, and sat through thousands of debriefs. If there’s one truth that has crystallized in 2024, it’s this: **the over-reliance on “years of experience” as a proxy for talent is officially dead.** The new currency? Applied AI competence. And the numbers back it up with brutal clarity.
 
 ## The Reality Check: Your Resume Is Losing Value by the Day

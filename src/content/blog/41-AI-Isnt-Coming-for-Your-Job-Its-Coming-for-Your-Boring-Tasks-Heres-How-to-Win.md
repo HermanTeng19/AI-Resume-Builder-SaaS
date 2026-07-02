@@ -2,6 +2,8 @@
 
 > *By Herman Teng, Ex-FAANG Recruiting Leader<br/>Jul 01, 2026*
 
+---
+
 
 ## The Reality Check: Net Job Growth Is Happening—Quietly
 

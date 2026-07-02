@@ -2,6 +2,8 @@
 
 > *Senior Tech Recruiter @ Career Insight Labs<br/>2026-07-02*
 
+---
+
 ## The Reality Check
 Here’s a fact most recruiters won’t say out loud: **the average tenure of a contract tech worker at a FAANG company is 11 months.** I’ve seen contractors cycle through 6‑month “extensions” for years without benefits, equity, or a real promotion path. Yet the industry keeps selling the “flexibility” of the gig economy. The dirty secret is that “rent don’t buy” is often a raw deal for the talent—especially when you’re the one left holding the resume gap and an expired visa.
 
