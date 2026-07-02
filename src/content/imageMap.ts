@@ -40,4 +40,6 @@ export const imageMap: Record<string, string> = {
   '39-The-Contract-Work-Trap-Why-Tech-Professionals-Leave-Money-on-the-Table-A-FAANG-R': 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80',
   '40-The-69-FAANG-Hiring-Surge-Why-2024-Is-Your-Best-Shot-to-Pivot-into-AI-Machine-Le': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
   '41-AI-Isnt-Coming-for-Your-Job-Its-Coming-for-Your-Boring-Tasks-Heres-How-to-Win': '/blog-images/blog_cover_41.jpg',
+  '42-AI-Skills-Are-Now-More-Valuable-Than-Experience-71-of-Employers-Agree-Heres-Your': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80',
+  '43-The-Rent-Dont-Buy-Lie-What-Nobody-Tells-You-About-Contract-Work-in-Tech': 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
 };
