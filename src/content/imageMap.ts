@@ -42,7 +42,4 @@ export const imageMap: Record<string, string> = {
   '41-AI-Isnt-Coming-for-Your-Job-Its-Coming-for-Your-Boring-Tasks-Heres-How-to-Win': '/blog-images/blog_cover_41.jpg',
   '42-AI-Skills-Are-Now-More-Valuable-Than-Experience-71-of-Employers-Agree-Heres-Your': 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&q=80',
   '43-The-Rent-Dont-Buy-Lie-What-Nobody-Tells-You-About-Contract-Work-in-Tech': 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
-  '44-75-of-Tech-Hiring-Managers-Are-Shifting-to-Contract-Workers-Heres-How-to-Make-th': 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80',
-  '45-Product-Management-Hiring-Rebound-Inside-the-2025-PM-Job-Market-Surge-and-How-to': 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80',
-  '46-2026-Tech-Hiring-AI-Cloud-Cybersecurity-Jobs-Salaries': 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&q=80',
 };
