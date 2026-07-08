@@ -1,8 +1,7 @@
 # AI Skills Are Now More Valuable Than Experience: 71% of Employers Agree – Here's Your Playbook
 
-> *Senior Tech Recruiter @ Career Insight Labs<br/>2026-07-02*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Jul 07, 2026*
 
----
 
 I’ve spent over a dozen years inside the recruiting machinery of a North American FAANG company. I’ve screened more resumes than I can count, fought for headcount, and sat through thousands of debriefs. If there’s one truth that has crystallized in 2024, it’s this: **the over-reliance on “years of experience” as a proxy for talent is officially dead.** The new currency? Applied AI competence. And the numbers back it up with brutal clarity.
 
@@ -86,3 +85,18 @@ Your experience is still an asset—but only if you couple it with the skills th
 ---
 
 *Ready to close your AI skill gap? Start with a free online course on edX or DeepLearning.AI today and commit to building one small AI‑powered project this month. Your future recruiter will thank you.*
+
+```html
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI Skills Are Now More Valuable Than Experience: 71% of Employers Agree – Here's Your Playbook",
+  "description": "Demand for AI skills has doubled, and 71% of employers now favor candidates with AI proficiency over more experience. A senior FAANG recruiter shares data-driven insights and a 90-day framework to pivot your career.",
+  "author": {"@type": "Person", "name": "CareerInsightLabs"},
+  "datePublished": "2026-06-19"
+}
+</script>
+```

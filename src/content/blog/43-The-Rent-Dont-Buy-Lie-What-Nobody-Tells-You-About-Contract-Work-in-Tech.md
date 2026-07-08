@@ -1,8 +1,7 @@
 # The ‘Rent Don’t Buy’ Lie: What Nobody Tells You About Contract Work in Tech
 
-> *Senior Tech Recruiter @ Career Insight Labs<br/>2026-07-02*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Jul 07, 2026*
 
----
 
 ## The Reality Check
 Here’s a fact most recruiters won’t say out loud: **the average tenure of a contract tech worker at a FAANG company is 11 months.** I’ve seen contractors cycle through 6‑month “extensions” for years without benefits, equity, or a real promotion path. Yet the industry keeps selling the “flexibility” of the gig economy. The dirty secret is that “rent don’t buy” is often a raw deal for the talent—especially when you’re the one left holding the resume gap and an expired visa.
@@ -57,3 +56,18 @@ The “rent don’t buy” model is great for shareholders. It’s terrible for 
 So here’s your move: audit your last two years of income across total compensation, not just the headline rate. Then pull up the Dice skills map (or any reputable source) and verify that your current project actually adds a monetizable credential to your portfolio. If it doesn’t, you’re not building a career—you’re just paying rent on a job somebody else owns.
 
 **Ready to stop renting your career?** Join over 15,000 tech professionals who get the un‑fluffed truth about hiring, salaries, and job security every week. [Sign up for the Career Insight Labs newsletter](https://careerinsightlabs.com) and get my free FTE‑vs‑Contract calculator.
+
+```html
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The ‘Rent Don’t Buy’ Lie: What Nobody Tells You About Contract Work in Tech",
+  "description": "A senior FAANG recruiter shares hard data and a 5‑point framework to evaluate temp vs. FTE roles, avoid misclassification, and future‑proof your tech career.",
+  "author": {"@type": "Person", "name": "Senior FAANG Recruiter"},
+  "datePublished": "2026-06-19"
+}
+</script>
+```
