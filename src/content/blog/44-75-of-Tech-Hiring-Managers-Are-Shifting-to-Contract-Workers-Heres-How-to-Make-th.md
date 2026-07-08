@@ -84,8 +84,4 @@ The data is clear: contract hiring is not the economy’s consolation prize; it�
 
 ---
 
-```html
 
-<meta name="description" content="Tech hiring managers are rapidly switching to contract workers — learn why and how software engineers can profit from the shift with higher rates and flexibility.">
-
-```
