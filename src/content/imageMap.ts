@@ -45,4 +45,7 @@ export const imageMap: Record<string, string> = {
   '44-75-of-Tech-Hiring-Managers-Are-Shifting-to-Contract-Workers-Heres-How-to-Make-th': 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop',
   '45-Product-Management-Hiring-Rebound-Inside-the-2025-PM-Job-Market-Surge-and-How-to': 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop',
   '46-2026-Tech-Hiring-AI-Cloud-Cybersecurity-Jobs-Salaries': '/blog-images/blog_cover_46.jpg',
+  '47-The-Specialization-Imperative-Why-Going-Narrow-Is-the-Fastest-Path-to-a-Six-Figu': '/blog-images/blog_cover_47.jpg',
+  '48-2026-Remote-Tech-Career-Hotspots-Where-to-Live-for-Salary-Growth-and-Low-Cost-of': 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80',
+  '49-The-2025-Product-Management-Hiring-Rebound-What-the-Data-Actually-Shows-and-How-': 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80',
 };
