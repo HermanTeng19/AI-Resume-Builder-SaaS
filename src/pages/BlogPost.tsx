@@ -45,6 +45,7 @@ const FacebookIcon = ({ size = 18 }) => (
 );
 import { imageMap } from '../content/imageMap';
 import { SEO } from '../components/SEO';
+import RelatedArticles from '../components/RelatedArticles';
 
 const modules = import.meta.glob('../content/blog/*.md', { query: '?raw', import: 'default', eager: true });
 
@@ -179,6 +180,8 @@ const BlogPost: React.FC = () => {
             {bodyContent ? bodyContent : content}
           </ReactMarkdown>
         </article>
+        
+        <RelatedArticles currentSlug={slug || ''} />
       </div>
     </div>
   );
