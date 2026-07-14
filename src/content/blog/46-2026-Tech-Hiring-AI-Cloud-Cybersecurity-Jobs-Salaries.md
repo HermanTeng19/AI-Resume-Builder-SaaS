@@ -1,6 +1,6 @@
 # 2026 Tech Hiring: AI, Cloud, Cybersecurity Jobs & Salaries
 
-> *By Herman Teng, Ex-FAANG Recruiting Leader<br/>Jul 07, 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Jul 07, 2026*
 
 ---
 

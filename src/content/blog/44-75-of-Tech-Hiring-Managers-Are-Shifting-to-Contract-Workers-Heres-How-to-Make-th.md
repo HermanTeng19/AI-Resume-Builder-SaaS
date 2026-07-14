@@ -1,6 +1,6 @@
 # 75% of Tech Hiring Managers Are Shifting to Contract Workers — Here’s How to Make the Trend Pay You More
 
-> *By Herman Teng, Ex-FAANG Recruiting Leader<br/>Jul 07, 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Jul 07, 2026*
 
 ---
 

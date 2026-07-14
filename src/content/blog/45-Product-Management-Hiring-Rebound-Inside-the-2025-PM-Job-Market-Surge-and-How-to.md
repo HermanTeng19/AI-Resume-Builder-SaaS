@@ -1,6 +1,6 @@
 # Product Management Hiring Rebound: Inside the 2025 PM Job Market Surge and How to Capitalize on It
 
-> *By Herman Teng, Ex-FAANG Recruiting Leader<br/>Jul 07, 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Jul 07, 2026*
 
 ---
 

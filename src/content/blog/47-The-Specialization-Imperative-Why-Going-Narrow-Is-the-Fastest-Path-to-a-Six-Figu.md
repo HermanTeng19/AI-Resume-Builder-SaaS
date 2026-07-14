@@ -1,6 +1,6 @@
 # The Specialization Imperative: Why Going Narrow Is the Fastest Path to a Six-Figure Tech Salary in 2026
 
-> *By Herman Teng, Ex-FAANG Recruiting Leader<br/>Jul 10, 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Jul 10, 2026*
 
 ---
 

@@ -1,6 +1,6 @@
 # 2026 Remote Tech Career Hotspots: Where to Live for Salary, Growth, and Low Cost of Living
 
-> *By Herman Teng, Ex-FAANG Recruiting Leader<br/>Jul 10, 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Jul 10, 2026*
 
 ---
 

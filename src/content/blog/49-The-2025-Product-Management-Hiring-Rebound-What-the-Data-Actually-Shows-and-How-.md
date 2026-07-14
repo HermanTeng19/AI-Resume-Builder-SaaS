@@ -1,6 +1,6 @@
 # The 2025 Product Management Hiring Rebound: What the Data Actually Shows (and How to Beat the Competition)
 
-> *By Herman Teng, Ex-FAANG Recruiting Leader<br/>Jul 10, 2026*
+> *Senior Tech Recruiter @ Career Insight Labs<br/>Jul 10, 2026*
 
 ---
 

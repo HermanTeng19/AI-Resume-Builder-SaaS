@@ -48,4 +48,6 @@ export const imageMap: Record<string, string> = {
   '47-The-Specialization-Imperative-Why-Going-Narrow-Is-the-Fastest-Path-to-a-Six-Figu': '/blog-images/blog_cover_47.jpg',
   '48-2026-Remote-Tech-Career-Hotspots-Where-to-Live-for-Salary-Growth-and-Low-Cost-of': 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80',
   '49-The-2025-Product-Management-Hiring-Rebound-What-the-Data-Actually-Shows-and-How-': 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=800&q=80',
+  '50-Data-Engineering-in-2026-The-Most-Overlooked-Tech-Career-With-34-Growth-and-a-12': 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+  '51-Skills-Based-Hiring-Is-Replacing-Years-of-Experience-A-FAANG-Recruiters-Data-Bac': 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80',
 };
