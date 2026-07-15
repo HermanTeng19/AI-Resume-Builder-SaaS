@@ -5,6 +5,7 @@ import { Document, Packer, Paragraph, TextRun, HeadingLevel } from 'docx';
 import { saveAs } from 'file-saver';
 import { SEO } from '../components/SEO';
 import { generateParsePrompt, generateOptimizeBulletsPrompt, generateTailorSkillsPrompt, generateOptimizeSummaryPrompt } from '../lib/prompts';
+import productDemoVideo from '../assets/ProductDemoVideo.mp4';
 
 // --- Types ---
 interface PersonalInfo {
@@ -1164,6 +1165,19 @@ const Home: React.FC = () => {
           <p style={{ fontSize: '1.1rem', color: '#475569', marginBottom: '2rem', lineHeight: '1.8' }}>
             The modern job market is highly automated. Over 90% of Fortune 500 companies use an Applicant Tracking System (ATS) to filter resumes before a human ever sees them. Our free AI Resume Optimizer is designed specifically to help you bypass these filters using semantic analysis and keyword embedding.
           </p>
+
+          <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', border: '1px solid var(--border-color)', marginBottom: '3rem', backgroundColor: '#000' }}>
+            <video 
+              src={productDemoVideo} 
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              controls
+              className="custom-hover-video"
+              style={{ width: '100%', display: 'block' }}
+            />
+          </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
             <div style={{ background: 'white', padding: '2rem', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)' }}>

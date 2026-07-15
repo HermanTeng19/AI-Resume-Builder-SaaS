@@ -26,11 +26,12 @@
 }
 
 body {
+  background: var(--bg-color);
   font-family: var(--font-body);
-  background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a {
@@ -1327,4 +1328,49 @@ html, body {
   font-size: 0.85rem;
   color: var(--text-muted);
   font-weight: 500;
+}
+
+/* Custom Hover Video Controls */
+.custom-hover-video::-webkit-media-controls-panel {
+  background-color: transparent !important;
+  background-image: none !important;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.custom-hover-video::-webkit-media-controls {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.custom-hover-video:hover::-webkit-media-controls {
+  opacity: 1;
+}
+
+.hero-video-wrapper {
+  width: 100vw;
+  max-width: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-top: 2rem;
+}
+.hero-video-wrapper video {
+  max-height: 85vh;
+}
+
+/* Mobile Optimizations for Video & Hero */
+@media (max-width: 768px) {
+  .hero-video-wrapper {
+    margin-top: 0;
+  }
+  .hero-video-wrapper video {
+    max-height: 50vh;
+  }
+  .audience-section {
+    padding: 3rem 1rem !important;
+  }
 }

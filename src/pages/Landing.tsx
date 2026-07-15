@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, ShieldCheck, Target, PenTool, Download, UploadCloud, Briefcase, GraduationCap, Search, Star, FileDown, MessageSquare } from 'lucide-react';
 import { SEO } from '../components/SEO';
+import promotionalVideo from '../assets/PromotionalVideo-audio.mp4';
+import productDemoVideo from '../assets/ProductDemoVideo.mp4';
 
 const modules = import.meta.glob('../content/blog/*.md', { query: '?raw', import: 'default', eager: true });
 
@@ -118,6 +120,20 @@ const Landing: React.FC = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Edge-to-Edge Promotional Video */}
+      <section className="hero-video-wrapper" style={{ width: '100%', backgroundColor: '#000', overflow: 'hidden' }}>
+        <video 
+          src={promotionalVideo} 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          controls
+          className="custom-hover-video"
+          style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
+        />
       </section>
 
       {/* Feature Section */}
@@ -247,6 +263,20 @@ const Landing: React.FC = () => {
             </ul>
           </div>
         </div>
+      </section>
+
+      {/* Edge-to-Edge Product Demo Video */}
+      <section className="hero-video-wrapper" style={{ width: '100%', backgroundColor: '#000', overflow: 'hidden' }}>
+        <video 
+          src={productDemoVideo} 
+          autoPlay 
+          muted 
+          loop 
+          playsInline 
+          controls
+          className="custom-hover-video"
+          style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
+        />
       </section>
 
       {/* Testimonials Section */}
